@@ -1,0 +1,39 @@
+{% load static %}
+<header class="site-header site-header-inner">
+    <div class="nav-container">
+        <a href="{% url 'home' %}" class="brand" aria-label="The Dance Place home">
+            <div class="brand-logo"><img src="{% static 'images/dance_place_logo.png' %}" alt="The Dance Place LTD logo"></div>
+        </a>
+
+        <button class="mobile-menu-button" id="mobileMenuButton" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+            <a href="{% url 'home' %}" class="nav-link">Home</a>
+
+            <div class="nav-dropdown" data-nav-dropdown>
+                <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="aboutSubmenu">
+                    About <span class="nav-dropdown-chevron" aria-hidden="true">⌄</span>
+                </button>
+                <div class="nav-dropdown-menu" id="aboutSubmenu">
+                    <a href="{% url 'about' %}" class="nav-dropdown-link">
+                        <span class="nav-dropdown-kicker">Our Story</span>
+                        <strong>The Dance Place</strong>
+                    </a>
+                    <a href="{% url 'meet_team' %}" class="nav-dropdown-link">
+                        <span class="nav-dropdown-kicker">People Behind the Studio</span>
+                        <strong>Meet Our Team</strong>
+                    </a>
+                </div>
+            </div>
+
+            <a href="{% url 'programs' %}" class="nav-link">Programs</a>
+            <a href="{% url 'performances' %}" class="nav-link">Performances</a>
+            <a href="{% url 'faq' %}" class="nav-link">FAQ</a>
+            <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+        </nav>
+
+        <a href="{% url 'registration' %}" class="nav-register-button">Register Now</a>
+    </div>
+</header>

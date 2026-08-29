@@ -1,0 +1,175 @@
+{% extends "website/base.html" %}
+{% block title %}Registration | The Dance Place LTD{% endblock %}
+{% block meta_description %}Register for dance classes at The Dance Place LTD. Explore programs, check the current class schedule, and continue to The Studio Director portal to enroll.{% endblock %}
+{% block content %}
+
+<section class="registration-hero-v2" data-pointer-glow>
+  <div class="page-shell registration-hero-layout">
+    <div class="registration-hero-copy" data-reveal>
+      <span class="eyebrow">Registration</span>
+      <h1>Find your class.<br><em>Then make it official.</em></h1>
+      <p>Start by exploring the programs that fit your dancer, check the current schedule, and finish registration through The Studio Director.</p>
+      <div class="registration-hero-actions">
+        <a class="button button-primary" href="https://app.thestudiodirector.com/danceplaceltd/portal.sd?page=Login" target="_blank" rel="noopener">View Classes & Register <span>↗</span></a>
+        <a class="registration-secondary-link" href="{% url 'programs' %}">Explore programs <span>→</span></a>
+      </div>
+    </div>
+
+    <aside class="registration-quick-card" data-reveal data-pointer-glow>
+      <span class="registration-card-label">Current Class Information</span>
+      <h2>Schedules and openings stay live in Studio Director.</h2>
+      <p>Class days, times, levels, availability, customer accounts, and enrollment are managed there so you always see the most current information.</p>
+      <div class="registration-card-note">
+        <span class="registration-dot"></span>
+        Registration availability can change as classes fill.
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="registration-flow-section">
+  <div class="page-shell registration-flow-layout">
+    <div class="registration-arrow-column" aria-hidden="true" data-reveal>
+      <div class="registration-arrow">
+        <span class="registration-arrow-line"></span>
+        <span class="registration-arrow-head"></span>
+      </div>
+      <span class="registration-arrow-label">Start here</span>
+    </div>
+
+    <div class="registration-flow-content">
+      <div class="registration-section-heading" data-reveal>
+        <span class="eyebrow">How Registration Works</span>
+        <h2>Three simple steps.</h2>
+        <p>Choose the program that fits, check the live schedule, then complete registration and payment through Studio Director.</p>
+      </div>
+
+      <div class="registration-flow-stack" data-registration-flow>
+        <article class="registration-step-card step-purple" data-registration-step data-reveal>
+          <div class="registration-step-top">
+            <span class="registration-step-number">01</span>
+            <span class="registration-step-kicker">Start Here</span>
+          </div>
+          <div class="registration-step-content">
+            <h3>Explore Programs</h3>
+            <p>See recreational, accelerated, performance, and short-format options to find the best fit for your dancer.</p>
+            <a href="{% url 'programs' %}">View programs <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="registration-step-card step-blue" data-registration-step data-reveal>
+          <div class="registration-step-top">
+            <span class="registration-step-number">02</span>
+            <span class="registration-step-kicker">See What's Open</span>
+          </div>
+          <div class="registration-step-content">
+            <h3>Check the Live Schedule</h3>
+            <p>Review current class days, times, levels, and availability directly in The Studio Director.</p>
+            <a href="https://app.thestudiodirector.com/danceplaceltd/portal.sd?page=Login" target="_blank" rel="noopener">Open live schedule <span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="registration-step-card step-dark" data-registration-step data-reveal>
+          <div class="registration-step-top">
+            <span class="registration-step-number">03</span>
+            <span class="registration-step-kicker">Finish Up</span>
+          </div>
+          <div class="registration-step-content">
+            <h3>Complete Registration & Payment</h3>
+            <p>Follow the Studio Director prompts to enroll, complete the required registration form and waiver, and select your preferred payment method. Your registration and first month's tuition secure your dancer's place, and classes are filled on a first-come basis.</p>
+            <div class="registration-step-actions">
+              <button class="tuition-modal-trigger" type="button" data-tuition-open>View tuition rates &amp; cost example <span>→</span></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="registration-help-section">
+  <div class="page-shell registration-help-layout" data-reveal>
+    <div>
+      <span class="eyebrow light">Need Help?</span>
+      <h2>Not sure which class is the right fit — or need help registering?</h2>
+    </div>
+    <div class="registration-help-copy">
+      <p>Proper placement matters. If you're unsure about a level, program, dance style, or any part of registration, contact The Dance Place and we'll help point you in the right direction.</p>
+      <div class="registration-help-actions">
+        <a class="registration-phone" href="tel:2486669929">248-666-9929 <span>→</span></a>
+        <a class="registration-contact-link" href="{% url 'contact' %}">Contact the studio <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="tuition-modal" data-tuition-modal aria-hidden="true">
+  <div class="tuition-modal-backdrop" data-tuition-close></div>
+
+  <section class="tuition-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="tuition-modal-title">
+    <button class="tuition-modal-close" type="button" aria-label="Close tuition rates" data-tuition-close>×</button>
+
+    <div class="tuition-modal-heading">
+      <span class="eyebrow">Tuition Guide</span>
+      <h2 id="tuition-modal-title">Monthly Tuition Rates</h2>
+      <p>Tuition is based on the total number of class hours your family takes each week.</p>
+    </div>
+
+    <div class="tuition-modal-grid">
+      <div class="tuition-rate-panel">
+        <div class="tuition-preschool">
+          <span>Preschool</span>
+          <strong>$55</strong>
+          <small>45-minute class</small>
+        </div>
+
+        <div class="tuition-rates">
+          <div class="tuition-rate-heading">
+            <span>50-minute classes</span>
+            <span>Monthly</span>
+          </div>
+          <div><span>1st hour</span><strong>$65</strong></div>
+          <div><span>2nd hour</span><strong>$57</strong></div>
+          <div><span>3rd hour</span><strong>$52</strong></div>
+          <div><span>4th hour</span><strong>$46</strong></div>
+          <div><span>5th hour</span><strong>$38</strong></div>
+          <div><span>6th hour</span><strong>$32</strong></div>
+          <div><span>7th hour</span><strong>$20</strong></div>
+        </div>
+
+        <div class="tuition-family-cap">
+          <span>Family monthly cap</span>
+          <strong>$500</strong>
+        </div>
+      </div>
+
+      <div class="tuition-example-panel">
+        <span class="tuition-example-label">How to estimate your tuition</span>
+        <h3>Add your family's total weekly class hours.</h3>
+        <p>Each additional hour uses the next rate in the list. A half-hour is charged at half of the next hourly rate.</p>
+
+        <div class="tuition-example">
+          <span>Example</span>
+          <strong>3½ weekly hours</strong>
+          <div class="tuition-equation">
+            <span>$65</span>
+            <b>+</b>
+            <span>$57</span>
+            <b>+</b>
+            <span>$52</span>
+            <b>+</b>
+            <span>$23</span>
+            <b>=</b>
+            <strong>$197/mo</strong>
+          </div>
+          <small>The $23 is half of the 4th-hour rate of $46.</small>
+        </div>
+
+        <p class="tuition-modal-note">This guide is intended to help families estimate monthly tuition. Final enrollment and payment details are completed through The Studio Director.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "website/base.html" %}
+{% block title %}Dance Programs | The Dance Place LTD{% endblock %}
+{% block meta_description %}Explore recreational, accelerated, performance and short-take dance programs at The Dance Place LTD in Waterford, Michigan.{% endblock %}
+{% block content %}
+
+
+<section class="page-hero program-hero">
+  <div class="page-shell page-hero-grid">
+    <div>
+      <span class="eyebrow">Dance Programs</span>
+      <h1>FIND YOUR<br><em>PLACE TO DANCE.</em></h1>
+      <p>From a dancer's first class to advanced training and performance opportunities, The Dance Place offers programs designed to meet students where they are and give them room to grow.</p>
+    </div>
+    <div class="page-hero-card stat-card">
+      <span>Styles Offered</span>
+      <strong>Ballet • Tap • Jazz • Contemporary • Hip Hop • Acro • Pointe</strong>
+      <p>Class availability varies by age, level and season. Current openings and registration are managed through The Studio Director.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section programs-intro">
+  <div class="page-shell">
+    <div class="section-heading">
+      <span class="eyebrow">Explore Our Programs</span>
+      <h2>CHOOSE THE EXPERIENCE THAT FITS YOUR DANCER.</h2>
+      <p>Hover over a program to learn more. On phones and tablets, program details are shown automatically.</p>
+    </div>
+
+    <div class="programs-list">
+      <article class="program-list-item" id="recreational" tabindex="0">
+        <div class="program-list-title">
+          <span class="eyebrow">Recreational Dance</span>
+          <h2>Recreational Program</h2>
+        </div>
+        <p class="program-list-summary">Progressive, age-appropriate training for dancers who want to learn, grow and enjoy performing.</p>
+        <span class="program-list-arrow" aria-hidden="true">→</span>
+        <div class="program-list-details">
+          <div>
+            <p>Our traditional dance-season pathway builds technique, choreography, confidence and stage experience throughout the school year, with opportunities to perform in professionally organized spring recitals.</p>
+            <div class="tag-row"><span>Preschool</span><span>Ballet</span><span>Tap</span><span>Jazz</span><span>Contemporary</span><span>Hip Hop</span><span>Acro</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="program-list-item" id="accelerated" tabindex="0">
+        <div class="program-list-title">
+          <span class="eyebrow">Accelerated Dance</span>
+          <h2>Accelerated Program</h2>
+        </div>
+        <p class="program-list-summary">More focused training for experienced dancers ready to challenge themselves beyond the recreational level.</p>
+        <span class="program-list-arrow" aria-hidden="true">→</span>
+        <div class="program-list-details">
+          <div>
+            <p>Accelerated study may include additional technique classes, summer intensives, ballet workshops, guest artists and expanded performance opportunities. Placement or teacher recommendation may be required.</p>
+            <div class="tag-row"><span>Technique</span><span>Summer Intensive</span><span>Ballet Workshops</span><span>Guest Artists</span><span>Advanced Training</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="program-list-item" id="performance" tabindex="0">
+        <div class="program-list-title">
+          <span class="eyebrow">Performance & Competition</span>
+          <h2>Performance Programs</h2>
+        </div>
+        <p class="program-list-summary">Additional stage opportunities for dancers interested in line groups, competition teams and community performances.</p>
+        <span class="program-list-arrow" aria-hidden="true">→</span>
+        <div class="program-list-details">
+          <div>
+            <p>Selected dancers can participate in performance classes, audition-based line groups and competition opportunities that extend beyond the annual recital, including community appearances and regional or national events.</p>
+            <a class="text-link" href="{% url 'performances' %}">See performance opportunities <span>→</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="program-list-item" id="short-takes" tabindex="0">
+        <div class="program-list-title">
+          <span class="eyebrow">Short-Takes & Special Programs</span>
+          <h2>Short-Takes</h2>
+        </div>
+        <p class="program-list-summary">Short-format sessions and specialty offerings for families looking to try something new without a full-season commitment.</p>
+        <span class="program-list-arrow" aria-hidden="true">→</span>
+        <div class="program-list-details">
+          <div>
+            <p>Offerings can include Mommy & Me, preschool sessions, dance camps, My Ability Dance, ballroom, workshops and seasonal intensives. Programs and dates change throughout the year.</p>
+            <p class="muted-note">Contact the studio or check the current schedule for active offerings.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="page-cta">
+  <div class="page-shell">
+    <div>
+      <span class="eyebrow">Ready To Browse?</span>
+      <h2>SEE WHAT'S AVAILABLE NOW.</h2>
+    </div>
+    <div class="cta-actions"><a class="button button-primary" href="{% url 'registration' %}">View Registration <span>→</span></a></div>
+  </div>
+</section>
+{% endblock %}

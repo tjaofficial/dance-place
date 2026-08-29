@@ -1,0 +1,14 @@
+{% extends "website/base.html" %}
+{% block title %}FAQ & Studio Information | The Dance Place LTD{% endblock %}
+{% block meta_description %}Common questions for Dance Place families about registration, attendance, tuition, studio policies and more.{% endblock %}
+{% block content %}
+<section class="page-hero faq-hero"><div class="page-shell page-hero-grid"><div><span class="eyebrow">Studio Information</span><h1>GOOD QUESTIONS.<br><em>CLEAR ANSWERS.</em></h1><p>Everything families usually need before the first class, during the season and when something changes.</p></div><div class="page-hero-card"><span class="card-kicker">Can't Find It?</span><strong>Talk to a real person.</strong><p>Call the studio at 248-666-9929 and we'll help you get pointed in the right direction.</p><a class="text-link" href="{% url 'contact' %}">Contact The Dance Place →</a></div></div></section>
+<section class="content-section"><div class="page-shell faq-list">
+<details open><summary>How do I register for classes?</summary><p>Start by reviewing the program options and current schedule. The live class schedule, customer portal and online account services are handled through The Studio Director. Some classes or placements may require direct contact with the studio.</p></details>
+<details><summary>What if my child misses class?</summary><p>The Dance Place places a strong emphasis on consistent attendance and historically provides make-up opportunities when students miss class. Current make-up procedures and available classes should be confirmed with the studio.</p></details>
+<details><summary>How is tuition handled?</summary><p>Tuition and account payments are managed through the studio's current registration/account system. Because rates and payment policies can change by season, use the current registration information or contact the studio for the latest details.</p></details>
+<details><summary>How do I know which class is right for my dancer?</summary><p>Proper placement is a priority. Age, experience, technique and individual needs all matter, so the studio can help guide families when the correct level is not obvious from the schedule.</p></details>
+<details><summary>What types of programs are available?</summary><p>The Dance Place offers recreational and accelerated pathways, performance and competition opportunities, and rotating short-take or special programs. Styles include ballet, tap, jazz, contemporary, hip hop, acro, pointe and more depending on season and level.</p></details>
+<details><summary>Where is the studio located?</summary><p>The Dance Place LTD is located at 7544 Highland Road in Waterford, Michigan 48327, along M-59.</p></details>
+</div></section>
+{% endblock %}

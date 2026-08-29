@@ -1,0 +1,26 @@
+{% load static %}
+<section class="hero" id="home">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-blob hero-blob-one"></div><div class="hero-blob hero-blob-two"></div><div class="hero-blob hero-blob-three"></div>
+    <div class="hero-container">
+        <div class="hero-content">
+            <span class="hero-kicker">Waterford, Michigan • Dance Education For Every Stage</span>
+            <h1 class="hero-title"><span>DANCE.</span><span class="hero-title-script">EXPRESS.</span><span>BELONG.</span></h1>
+            <p class="hero-description">A place where dancers build technique, confidence and lifelong memories. From first classes to advanced training, The Dance Place combines quality instruction with an atmosphere that keeps the joy in dance.</p>
+            <div class="hero-buttons">
+                <a href="{% url 'programs' %}" class="button button-primary">Explore Programs <span>→</span></a>
+                <a href="{% url 'registration' %}" class="button button-outline">View Registration <span>→</span></a>
+            </div>
+            <div class="hero-mini-stats">
+                <div class="mini-stat"><strong>Nearly 50 Years</strong><span>Serving dancers & families</span></div>
+                <div class="mini-stat"><strong>100+ Classes</strong><span>Options for busy schedules</span></div>
+                <div class="mini-stat"><strong>All Ages</strong><span>Recreational to accelerated</span></div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-ring hero-ring-one"></div><div class="hero-ring hero-ring-two"></div><div class="hero-circle"></div>
+            <div class="hero-photo-placeholder"><img src="{% static 'images/hero-dancer.png' %}" alt="Dancer from The Dance Place"></div>
+            <div class="hero-tagline">WHERE DANCERS <strong>FIND THEIR PLACE.</strong></div>
+        </div>
+    </div>
+</section>

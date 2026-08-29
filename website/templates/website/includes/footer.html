@@ -1,0 +1,15 @@
+{% load static %}
+<footer class="site-footer" id="contact">
+    <div class="footer-glow footer-glow-left"></div><div class="footer-glow footer-glow-right"></div>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <div class="footer-logo"><img src="{% static 'images/dance_place_logo.png' %}" alt="The Dance Place LTD"></div>
+            <h3>The Dance Place LTD</h3><p class="footer-tagline">Where dancers find their place.</p>
+            <p class="footer-description">Quality dance education, performance opportunities and a supportive studio community in Waterford, Michigan.</p>
+        </div>
+        <div class="footer-column"><h4>Explore</h4><a href="{% url 'home' %}">Home</a><a href="{% url 'about' %}">About</a><a href="{% url 'programs' %}">Programs</a><a href="{% url 'performances' %}">Performances</a></div>
+        <div class="footer-column"><h4>Families</h4><a href="{% url 'registration' %}">Registration</a><a href="https://app.thestudiodirector.com/danceplaceltd/portal.sd?page=Login" target="_blank" rel="noopener">Parent Portal</a><a href="{% url 'faq' %}">FAQ</a><a href="{% url 'contact' %}">Contact</a></div>
+        <div class="footer-column"><h4>Studio</h4><p>7544 Highland Road</p><p>Waterford, MI 48327</p><a href="tel:2486669929">248-666-9929</a><a href="{% url 'contact' %}">Get In Touch</a></div>
+    </div>
+    <div class="footer-bottom"><p>© <span id="currentYear"></span> The Dance Place LTD. All rights reserved.</p><div class="footer-bottom-links"><a href="{% url 'faq' %}">Studio Info</a><a href="{% url 'contact' %}">Accessibility</a></div></div>
+</footer>
