@@ -30,10 +30,22 @@
 
             <a href="{% url 'programs' %}" class="nav-link">Programs</a>
             <a href="{% url 'performances' %}" class="nav-link">Performances</a>
-            <a href="{% url 'faq' %}" class="nav-link">FAQ</a>
+            <a href="{% url 'calendar' %}" class="nav-link">Calendar</a>
             <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+
+            <div class="mobile-nav-actions">
+                <a href="{% url 'registration' %}" class="mobile-register-button">Register Now</a>
+                <a href="https://app.thestudiodirector.com/danceplaceltd/portal.sd?page=Login" class="mobile-studio-director-button" target="_blank" rel="noopener">
+                    Studio Director <span aria-hidden="true">↗</span>
+                </a>
+            </div>
         </nav>
 
-        <a href="{% url 'registration' %}" class="nav-register-button">Register Now</a>
+        <div class="nav-actions">
+            <a href="{% url 'registration' %}" class="nav-register-button">Register Now</a>
+            <a href="https://app.thestudiodirector.com/danceplaceltd/portal.sd?page=Login" class="nav-studio-director-button" target="_blank" rel="noopener">
+                Studio Director <span aria-hidden="true">↗</span>
+            </a>
+        </div>
     </div>
 </header>

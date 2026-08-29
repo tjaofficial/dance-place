@@ -534,3 +534,99 @@
         margin-top: 5px;
     }
 }
+
+/* Header action buttons */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.nav-studio-director-button {
+    min-width: 158px;
+    padding: 15px 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--white);
+    background: var(--black);
+    border: 2px solid var(--black);
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    box-shadow: 0 15px 30px rgba(9, 11, 18, .16);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.nav-studio-director-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(120deg, #171a27, #2a2250);
+    border-color: var(--purple);
+    box-shadow: 0 18px 38px rgba(25, 22, 52, .24);
+}
+
+.nav-studio-director-button span {
+    font-size: 15px;
+    line-height: 1;
+}
+
+.mobile-nav-actions {
+    display: none;
+}
+
+@media (max-width: 1180px) and (min-width: 851px) {
+    .nav-container { gap: 18px; }
+    .main-nav { gap: 15px; }
+    .nav-link { font-size: 10px; }
+    .nav-register-button {
+        min-width: 128px;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+    .nav-studio-director-button {
+        min-width: 142px;
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+}
+
+@media (max-width: 850px) {
+    .nav-actions {
+        display: none;
+    }
+
+    .mobile-nav-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 14px 0 2px;
+    }
+
+    .mobile-register-button,
+    .mobile-studio-director-button {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 18px;
+        border-radius: 14px;
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+
+    .mobile-register-button {
+        color: var(--white);
+        background: linear-gradient(120deg, var(--purple), var(--blue));
+    }
+
+    .mobile-studio-director-button {
+        color: var(--white);
+        background: var(--black);
+    }
+}
+

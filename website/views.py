@@ -25,6 +25,10 @@ def performances(request):
     return render(request, "website/performances.html")
 
 
+def calendar(request):
+    return render(request, "website/calendar.html")
+
+
 def faq(request):
     return render(request, "website/faq.html")
 

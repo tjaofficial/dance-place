@@ -1,0 +1,42 @@
+{% extends "website/base.html" %}
+{% block title %}Calendar | The Dance Place LTD{% endblock %}
+{% block meta_description %}View upcoming events, studio dates and public calendar information for The Dance Place LTD in Waterford, Michigan.{% endblock %}
+{% block content %}
+<section class="page-hero calendar-hero">
+    <div class="page-shell page-hero-grid">
+        <div>
+            <span class="eyebrow">Studio Calendar</span>
+            <h1>WHAT'S HAPPENING<br><em>AT THE DANCE PLACE.</em></h1>
+            <p>Keep up with important studio dates, performances, events, closures and other updates from The Dance Place.</p>
+        </div>
+
+        <div class="page-hero-card calendar-hero-card">
+            <span class="card-kicker">Always Up To Date</span>
+            <strong>One calendar for the studio.</strong>
+            <p>This calendar is updated directly by The Dance Place, so families can always check the latest public studio dates in one place.</p>
+        </div>
+    </div>
+</section>
+
+<section class="content-section calendar-section">
+    <div class="page-shell">
+        <div class="calendar-heading">
+            <div>
+                <span class="eyebrow">Upcoming Dates</span>
+                <h2>THE STUDIO CALENDAR.</h2>
+            </div>
+            <p>Use the calendar below to browse upcoming public events and important dates. You can switch views or open an event for more details.</p>
+        </div>
+
+        <div class="calendar-embed-card">
+            <iframe
+                src="https://calendar.google.com/calendar/embed?src=c_947d88ad37f4b1c96223fcf7fb757d0ae17913e4dcda03e37b7e15e34f69c01e%40group.calendar.google.com&ctz=America%2FDetroit"
+                title="The Dance Place public Google Calendar"
+                loading="lazy"
+                frameborder="0"
+                scrolling="no">
+            </iframe>
+        </div>
+    </div>
+</section>
+{% endblock %}
