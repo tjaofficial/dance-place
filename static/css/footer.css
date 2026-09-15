@@ -335,3 +335,32 @@
     }
 
 }
+
+/* Footer social icons */
+.footer-social svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.footer-social:focus-visible {
+    outline: 2px solid #afc7ff;
+    outline-offset: 3px;
+}
+
+@media (max-width: 650px) {
+    .footer-socials {
+        margin-top: 20px;
+    }
+
+    .footer-social {
+        width: 42px;
+        height: 42px;
+    }
+
+    .footer-social svg {
+        width: 19px;
+        height: 19px;
+    }
+}
+

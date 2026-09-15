@@ -2893,3 +2893,332 @@
     }
 
 }
+
+/* =========================================================
+   CLASS CARD DANCER IMAGES
+========================================================= */
+
+.class-image::before {
+    z-index: 1;
+}
+
+.class-image::after {
+    display: none;
+}
+
+.class-dancer {
+    position: absolute;
+    z-index: 2;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    pointer-events: none;
+    user-select: none;
+
+    transform-origin: center bottom;
+
+    filter:
+        drop-shadow(0 18px 22px rgba(35, 39, 83, 0.16));
+
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+}
+
+.class-dancer-hiphop {
+    width: 115%;
+    height: 96%;
+    transform: translateX(-50%) scale(1.02);
+}
+
+.class-dancer-ballet {
+    width: 132%;
+    height: 95%;
+    transform: translateX(-50%) scale(1.03);
+}
+
+.class-dancer-tap {
+    width: 105%;
+    height: 96%;
+    transform: translateX(-50%) scale(1.02);
+}
+
+.class-dancer-jazz {
+    width: 126%;
+    height: 94%;
+    transform: translateX(-50%) scale(1.02);
+}
+
+.class-dancer-technique {
+    width: 112%;
+    height: 97%;
+    transform: translateX(-50%) scale(1.02);
+}
+
+.class-card:hover .class-dancer {
+    filter:
+        drop-shadow(0 22px 28px rgba(35, 39, 83, 0.22));
+}
+
+.class-card:hover .class-dancer-hiphop {
+    transform: translateX(-50%) scale(1.06);
+}
+
+.class-card:hover .class-dancer-ballet {
+    transform: translateX(-50%) scale(1.07);
+}
+
+.class-card:hover .class-dancer-tap {
+    transform: translateX(-50%) scale(1.06);
+}
+
+.class-card:hover .class-dancer-jazz {
+    transform: translateX(-50%) scale(1.06);
+}
+
+.class-card:hover .class-dancer-technique {
+    transform: translateX(-50%) scale(1.06);
+}
+
+.class-image-label {
+    position: absolute;
+    z-index: 4;
+
+    left: 50%;
+    top: 47%;
+
+    transform: translate(-50%, -50%);
+
+    white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+    .class-dancer-hiphop {
+        width: 100%;
+    }
+
+    .class-dancer-ballet {
+        width: 112%;
+    }
+
+    .class-dancer-tap {
+        width: 94%;
+    }
+
+    .class-dancer-jazz {
+        width: 108%;
+    }
+
+    .class-dancer-technique {
+        width: 98%;
+    }
+}
+
+@media (max-width: 650px) {
+    .class-dancer-hiphop {
+        width: 92%;
+    }
+
+    .class-dancer-ballet {
+        width: 104%;
+    }
+
+    .class-dancer-tap {
+        width: 88%;
+    }
+
+    .class-dancer-jazz {
+        width: 102%;
+    }
+
+    .class-dancer-technique {
+        width: 92%;
+    }
+
+    .class-image-label {
+        top: 50%;
+    }
+}
+
+/* =========================================================
+   CLASSES / FIND YOUR STYLE — RESPONSIVE CARD NORMALIZATION
+   Keeps every program card proportional and every dancer aligned.
+========================================================= */
+
+.classes-layout {
+    grid-template-columns: minmax(235px, 285px) minmax(0, 1fr);
+    gap: clamp(28px, 4vw, 55px);
+}
+
+.class-grid {
+    min-width: 0;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(10px, 1.25vw, 17px);
+}
+
+.class-card {
+    min-width: 0;
+}
+
+/* The image area's height now comes from the card width instead of a fixed pixel height. */
+.class-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 6.55;
+}
+
+/* All dancer assets share the exact same frame and bottom baseline. */
+.class-dancer {
+    --dancer-scale: 1;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: contain;
+    object-position: center bottom;
+    transform: translateX(-50%) scale(var(--dancer-scale));
+    transform-origin: center bottom;
+}
+
+.class-dancer-hiphop {
+    --dancer-scale: 1.09;
+    width: 100%;
+    height: 100%;
+}
+
+.class-dancer-ballet {
+    --dancer-scale: 1.11;
+    width: 100%;
+    height: 100%;
+}
+
+.class-dancer-tap {
+    --dancer-scale: 1.08;
+    width: 100%;
+    height: 100%;
+}
+
+.class-dancer-jazz {
+    --dancer-scale: 1.11;
+    width: 100%;
+    height: 100%;
+}
+
+.class-dancer-technique {
+    --dancer-scale: 1.10;
+    width: 100%;
+    height: 100%;
+}
+
+.class-card:hover .class-dancer-hiphop,
+.class-card:hover .class-dancer-ballet,
+.class-card:hover .class-dancer-tap,
+.class-card:hover .class-dancer-jazz,
+.class-card:hover .class-dancer-technique {
+    transform: translateX(-50%) scale(calc(var(--dancer-scale) + .035));
+}
+
+.class-image-label {
+    top: 49%;
+    max-width: calc(100% - 18px);
+    padding: 7px 9px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(6px, .58vw, 8px);
+    letter-spacing: clamp(.45px, .07vw, 1px);
+}
+
+.class-card-footer {
+    min-height: clamp(72px, 6vw, 82px);
+    padding: 14px clamp(12px, 1.25vw, 18px);
+}
+
+.class-card-footer h3 {
+    font-size: clamp(22px, 1.9vw, 27px);
+}
+
+.class-arrow {
+    width: clamp(34px, 3vw, 39px);
+    height: clamp(34px, 3vw, 39px);
+}
+
+@media (max-width: 1325px) {
+    .classes-layout {
+        grid-template-columns: 1fr;
+        gap: 44px;
+    }
+
+    .classes-intro {
+        max-width: 650px;
+    }
+
+    .class-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .class-image {
+        aspect-ratio: 4 / 6.25;
+    }
+}
+
+@media (max-width: 1020px) {
+    .class-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .class-image {
+        aspect-ratio: 4 / 5.9;
+    }
+}
+
+@media (max-width: 760px) {
+    .class-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .class-image {
+        aspect-ratio: 4 / 6.05;
+    }
+
+    .class-image-label {
+        top: 49%;
+        font-size: 7px;
+    }
+}
+
+@media (max-width: 520px) {
+    .class-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .class-card {
+        width: min(100%, 390px);
+        margin-inline: auto;
+    }
+
+    .class-image {
+        aspect-ratio: 4 / 5.25;
+    }
+
+    .class-card-footer h3 {
+        font-size: 27px;
+    }
+
+    .class-arrow {
+        width: 39px;
+        height: 39px;
+    }
+}
+

@@ -100,3 +100,118 @@
     }
   });
 })();
+
+(() => {
+  const finders = document.querySelectorAll('[data-class-finder]');
+  if (!finders.length) return;
+
+  finders.forEach((finder) => {
+    const levelButtons = [...finder.querySelectorAll('[data-level-value]')];
+    const ageButtons = [...finder.querySelectorAll('[data-age-value]')];
+    const summary = finder.querySelector('[data-class-finder-summary]');
+    const action = finder.querySelector('[data-class-finder-button]');
+    const progressSteps = [...finder.querySelectorAll('.class-finder-progress span')];
+
+    let selectedLevel = null;
+    let selectedLevelLabel = '';
+    let selectedAge = null;
+    let selectedAgeLabel = '';
+
+    const updateUI = () => {
+      const hasLevel = Boolean(selectedLevel);
+      const hasAge = Boolean(selectedAge);
+
+      progressSteps.forEach((step, index) => {
+        step.classList.toggle('is-active', index === 0 || (index === 1 && hasLevel) || (index === 2 && hasLevel && hasAge));
+      });
+
+      if (summary) {
+        if (!hasLevel && !hasAge) {
+          summary.textContent = 'Select a level and age group';
+        } else if (hasLevel && !hasAge) {
+          summary.textContent = `Level ${selectedLevel}: ${selectedLevelLabel} · Choose an age group`;
+        } else {
+          summary.textContent = `Level ${selectedLevel}: ${selectedLevelLabel} · ${selectedAgeLabel}`;
+        }
+      }
+
+      if (action) {
+        const ready = hasLevel && hasAge;
+        action.classList.toggle('is-disabled', !ready);
+        action.setAttribute('aria-disabled', String(!ready));
+
+        if (ready) {
+          const url = new URL(action.getAttribute('href'), window.location.origin);
+          url.searchParams.set('level', selectedLevel);
+          url.searchParams.set('age', selectedAge);
+          action.setAttribute('href', `${url.pathname}${url.search}`);
+        }
+      }
+    };
+
+    levelButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        levelButtons.forEach((item) => item.classList.remove('is-selected'));
+        button.classList.add('is-selected');
+        selectedLevel = button.dataset.levelValue;
+        selectedLevelLabel = button.dataset.levelLabel || button.textContent.trim();
+        updateUI();
+      });
+    });
+
+    ageButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        ageButtons.forEach((item) => item.classList.remove('is-selected'));
+        button.classList.add('is-selected');
+        selectedAge = button.dataset.ageValue;
+        selectedAgeLabel = button.textContent.trim();
+        updateUI();
+      });
+    });
+
+    updateUI();
+  });
+})();
+
+(() => {
+  const photoSlots = document.querySelectorAll('[data-team-photo]');
+  if (!photoSlots.length) return;
+
+  photoSlots.forEach((slot) => {
+    const src = (slot.dataset.photoSrc || '').trim();
+    if (!src) return;
+
+    const image = slot.querySelector('.team-photo-image');
+    if (!image) return;
+
+    image.addEventListener('load', () => {
+      image.hidden = false;
+      slot.classList.add('has-photo');
+    }, { once: true });
+
+    image.addEventListener('error', () => {
+      image.hidden = true;
+      slot.classList.remove('has-photo');
+    }, { once: true });
+
+    image.src = src;
+  });
+})();
+
+(() => {
+  const teamCards = [...document.querySelectorAll('.team-grid details.team-member')];
+  if (!teamCards.length) return;
+
+  teamCards.forEach((card) => {
+    card.addEventListener('toggle', () => {
+      if (!card.open || card.classList.contains('team-member-compact')) return;
+
+      teamCards.forEach((otherCard) => {
+        if (otherCard !== card && otherCard.open) {
+          otherCard.open = false;
+        }
+      });
+    });
+  });
+})();
+

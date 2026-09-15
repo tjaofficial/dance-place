@@ -1,18 +1,89 @@
+{% load static %}
 <section class="classes-section" id="classes">
-    <div class="classes-background-word">MOVE</div><div class="classes-orb classes-orb-left"></div><div class="classes-orb classes-orb-right"></div>
+    <div class="classes-background-word">MOVE</div>
+    <div class="classes-orb classes-orb-left"></div>
+    <div class="classes-orb classes-orb-right"></div>
+
     <div class="section-container classes-layout">
         <div class="classes-intro">
             <span class="section-label">Explore Our Programs</span>
-            <h2 class="section-heading"><span class="section-heading-main">FIND YOUR</span><span class="section-heading-accent">STYLE</span></h2>
-            <p class="classes-description">Ballet, tap, jazz, contemporary, hip hop, acro, pointe and more — with recreational and accelerated pathways designed to meet dancers where they are and help them grow.</p>
-            <a href="{% url 'programs' %}" class="button button-primary">Explore All Programs <span>→</span></a>
+            <h2 class="section-heading">
+                <span class="section-heading-main">FIND YOUR</span>
+                <span class="section-heading-accent">STYLE</span>
+            </h2>
+            <p class="classes-description">
+                Ballet, tap, jazz, contemporary, hip hop, acro, pointe and more — with recreational and accelerated pathways designed to meet dancers where they are and help them grow.
+            </p>
+            <a href="{% url 'programs' %}" class="button button-primary">
+                Explore All Programs <span>→</span>
+            </a>
         </div>
+
         <div class="class-grid">
-            <a href="{% url 'programs' %}#recreational" class="class-card"><div class="class-image class-image-one"><div class="class-image-label">ENERGY + CONFIDENCE</div></div><div class="class-card-footer"><div><span class="class-small">Recreational</span><h3>Hip Hop</h3></div><div class="class-arrow">→</div></div></a>
-            <a href="{% url 'programs' %}#recreational" class="class-card"><div class="class-image class-image-two"><div class="class-image-label">FOUNDATION + FORM</div></div><div class="class-card-footer"><div><span class="class-small">Technique</span><h3>Ballet</h3></div><div class="class-arrow">→</div></div></a>
-            <a href="{% url 'programs' %}#recreational" class="class-card"><div class="class-image class-image-three"><div class="class-image-label">RHYTHM + MUSICALITY</div></div><div class="class-card-footer"><div><span class="class-small">Percussive</span><h3>Tap</h3></div><div class="class-arrow">→</div></div></a>
-            <a href="{% url 'programs' %}#recreational" class="class-card"><div class="class-image class-image-four"><div class="class-image-label">STYLE + PERFORMANCE</div></div><div class="class-card-footer"><div><span class="class-small">Performance</span><h3>Jazz</h3></div><div class="class-arrow">→</div></div></a>
-            <a href="{% url 'programs' %}#accelerated" class="class-card"><div class="class-image class-image-three"><div class="class-image-label">TRAIN + GROW</div></div><div class="class-card-footer"><div><span class="class-small">Accelerated</span><h3>Technique</h3></div><div class="class-arrow">→</div></div></a>
+            <a href="{% url 'programs' %}#recreational" class="class-card">
+                <div class="class-image class-image-one">
+                    <img class="class-dancer class-dancer-hiphop" src="{% static 'images/hiphop_dance.png' %}" alt="Hip hop dancer">
+                    <div class="class-image-label">ENERGY + CONFIDENCE</div>
+                </div>
+                <div class="class-card-footer">
+                    <div>
+                        <h3>Hip Hop</h3>
+                    </div>
+                    <div class="class-arrow">→</div>
+                </div>
+            </a>
+
+            <a href="{% url 'programs' %}#recreational" class="class-card">
+                <div class="class-image class-image-two">
+                    <img class="class-dancer class-dancer-ballet" src="{% static 'images/ballet_dance.png' %}" alt="Ballet dancer">
+                    <div class="class-image-label">FOUNDATION + FORM</div>
+                </div>
+                <div class="class-card-footer">
+                    <div>
+                        <h3>Ballet</h3>
+                    </div>
+                    <div class="class-arrow">→</div>
+                </div>
+            </a>
+
+            <a href="{% url 'programs' %}#recreational" class="class-card">
+                <div class="class-image class-image-three">
+                    <img class="class-dancer class-dancer-tap" src="{% static 'images/tap_dance.png' %}" alt="Tap dancer">
+                    <div class="class-image-label">RHYTHM + MUSICALITY</div>
+                </div>
+                <div class="class-card-footer">
+                    <div>
+                        <h3>Tap</h3>
+                    </div>
+                    <div class="class-arrow">→</div>
+                </div>
+            </a>
+
+            <a href="{% url 'programs' %}#recreational" class="class-card">
+                <div class="class-image class-image-four">
+                    <img class="class-dancer class-dancer-jazz" src="{% static 'images/jazz_dance.png' %}" alt="Jazz dancer">
+                    <div class="class-image-label">STYLE + PERFORMANCE</div>
+                </div>
+                <div class="class-card-footer">
+                    <div>
+                        <h3>Jazz</h3>
+                    </div>
+                    <div class="class-arrow">→</div>
+                </div>
+            </a>
+
+            <a href="{% url 'programs' %}#accelerated" class="class-card">
+                <div class="class-image class-image-three">
+                    <img class="class-dancer class-dancer-technique" src="{% static 'images/technique_dance.png' %}" alt="Accelerated technique dancer">
+                    <div class="class-image-label">TRAIN + GROW</div>
+                </div>
+                <div class="class-card-footer">
+                    <div>
+                        <h3>Technique</h3>
+                    </div>
+                    <div class="class-arrow">→</div>
+                </div>
+            </a>
         </div>
     </div>
 </section>

@@ -120,3 +120,32 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Contact form email
+CONTACT_EMAIL_ENABLED = os.getenv("CONTACT_EMAIL_ENABLED", "False").lower() == "true"
+CONTACT_EMAIL_TO = os.getenv("CONTACT_EMAIL_TO", "").strip()
+
+EMAIL_BACKEND = os.getenv(
+    "EMAIL_BACKEND",
+    "django.core.mail.backends.smtp.EmailBackend"
+)
+EMAIL_HOST = os.getenv("EMAIL_HOST", "").strip()
+EMAIL_PORT = int(os.getenv("EMAIL_PORT", "587"))
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "").strip()
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
+EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "True").lower() == "true"
+EMAIL_USE_SSL = os.getenv("EMAIL_USE_SSL", "False").lower() == "true"
+EMAIL_TIMEOUT = int(os.getenv("EMAIL_TIMEOUT", "10"))
+
+DEFAULT_FROM_EMAIL = os.getenv(
+    "EMAIL_FROM",
+    "The Dance Place Website <no-reply@thedanceplace.studio>"
+)
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
+
+# Basic anti-spam timing controls for the public contact form.
+CONTACT_EMAIL_MIN_SECONDS = float(os.getenv("CONTACT_EMAIL_MIN_SECONDS", "2.5"))
+CONTACT_EMAIL_RATE_LIMIT_SECONDS = int(
+    os.getenv("CONTACT_EMAIL_RATE_LIMIT_SECONDS", "30")
+)
+

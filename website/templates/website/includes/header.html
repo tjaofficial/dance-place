@@ -2,7 +2,8 @@
 <header class="site-header site-header-inner">
     <div class="nav-container">
         <a href="{% url 'home' %}" class="brand" aria-label="The Dance Place home">
-            <div class="brand-logo"><img src="{% static 'images/dance_place_logo.png' %}" alt="The Dance Place LTD logo"></div>
+            <div class="brand-logo"><img src="{% static 'images/dance_place_logo.png' %}" alt="The Dance Place logo"></div>
+            <span class="brand-name">The Dance Place</span>
         </a>
 
         <button class="mobile-menu-button" id="mobileMenuButton" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
@@ -31,7 +32,7 @@
             <a href="{% url 'programs' %}" class="nav-link">Programs</a>
             <a href="{% url 'performances' %}" class="nav-link">Performances</a>
             <a href="{% url 'calendar' %}" class="nav-link">Calendar</a>
-            <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+            <a href="{% url 'contact' %}" class="nav-link">Get In Touch</a>
 
             <div class="mobile-nav-actions">
                 <a href="{% url 'registration' %}" class="mobile-register-button">Register Now</a>
