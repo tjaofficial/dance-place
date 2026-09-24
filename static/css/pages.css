@@ -1,5 +1,14 @@
 /* Shared inner-page system */
-.site-header-inner { position: relative; background: rgba(255,255,255,.92); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(9,11,18,.06); }
+.site-header-inner {
+    position: relative;
+    background:
+        radial-gradient(circle at 10% -30%, rgba(130,70,255,.52), transparent 34%),
+        radial-gradient(circle at 88% 145%, rgba(42,157,255,.36), transparent 36%),
+        linear-gradient(112deg, #090b14 0%, #18102f 46%, #0a2e4c 100%);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255,255,255,.10);
+    box-shadow: 0 12px 34px rgba(7,9,23,.18);
+}
 .site-header-inner + main {}
 .page-shell { width: min(92%, 1240px); margin: 0 auto; }
 .page-hero { position: relative; overflow: hidden; padding: 92px 0 86px; background: radial-gradient(circle at 88% 10%, rgba(116,71,255,.15), transparent 28%), radial-gradient(circle at 12% 90%, rgba(52,120,255,.10), transparent 30%), linear-gradient(135deg,#fff 0%,#f8f5ff 48%,#f4f8ff 100%); }
