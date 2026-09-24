@@ -1,0 +1,58 @@
+{% extends "website/base.html" %}
+{% block title %}Live Class Schedule | The Dance Place{% endblock %}
+{% block meta_description %}Browse the current Dance Place class schedule by level, age, class type, season and availability.{% endblock %}
+{% block content %}
+
+<section class="page-hero schedule-hero">
+  <div class="page-shell page-hero-grid">
+    <div>
+      <span class="eyebrow">Live Class Schedule</span>
+      <h1>FIND THE<br><em>RIGHT CLASS.</em></h1>
+      <p>Browse current Dance Place classes, adjust the filters anytime, and find the option that fits your dancer.</p>
+    </div>
+
+    <div class="page-hero-card schedule-hero-card">
+      <span>Powered by Encore</span>
+      <strong>Live class information in one place.</strong>
+      <p>If you came here from the Programs page, your selected level and age are already applied. You can still change any filter below.</p>
+    </div>
+  </div>
+</section>
+
+<section class="schedule-widget-section">
+  <div class="page-shell">
+    <div class="schedule-widget-heading">
+      <div>
+        <span class="eyebrow">Current Classes</span>
+        <h2>SEE WHAT'S AVAILABLE.</h2>
+      </div>
+      <p>Use the filters inside the schedule to search by class type, level, age, season and availability.</p>
+    </div>
+
+    <div class="schedule-widget-card">
+      <iframe
+        id="encore-classes"
+        class="schedule-widget-frame"
+        src="{{ encore_widget_url }}"
+        title="The Dance Place live class schedule"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="page-cta schedule-cta">
+  <div class="page-shell">
+    <div>
+      <span class="eyebrow">Found A Class?</span>
+      <h2>READY TO REGISTER?</h2>
+    </div>
+    <div class="cta-actions">
+      <a class="button button-primary" href="{% url 'registration' %}">View Registration <span>→</span></a>
+      <a class="button button-outline" href="{% url 'programs' %}">Explore Programs <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

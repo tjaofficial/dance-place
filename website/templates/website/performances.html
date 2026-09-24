@@ -1,55 +1,88 @@
 {% extends "website/base.html" %}
 {% block title %}Performances & Opportunities | The Dance Place{% endblock %}
-{% block meta_description %}Discover recitals, performance groups, competition teams and community performance opportunities at The Dance Place .{% endblock %}
+{% block meta_description %}Explore recital, performance, competition and student choreography opportunities at The Dance Place in Waterford, Michigan.{% endblock %}
 {% block content %}
-<section class="page-hero">
-    <div class="page-shell page-hero-grid">
-        <div>
-            <span class="eyebrow">Performances</span>
-            <h1>THE CLASSROOM<br><em>MEETS THE STAGE.</em></h1>
-            <p>Training builds the dancer. Performing lets them feel what that work can become.</p>
-        </div>
-        <div class="page-hero-card">
-            <span class="card-kicker">Annual Spring Recitals</span>
-            <strong>A polished stage experience dancers and families can be proud of.</strong>
-            <p>Dance Place recital productions are designed to give students a professional, organized performance environment where progress gets celebrated.</p>
-        </div>
+
+<section class="performance-hero">
+  <div class="page-shell performance-hero-grid">
+    <div class="performance-hero-copy">
+      <span class="eyebrow">Performance Programs</span>
+      <h1>FROM CLASS<br><em>TO THE STAGE.</em></h1>
+      <p>Performance opportunities help dancers build confidence, strengthen technique and experience the joy of sharing their work.</p>
     </div>
-</section>
-<section class="content-section">
-    <div class="page-shell">
-        <div class="split-heading">
-            <div>
-                <span class="eyebrow">Beyond Recital</span>
-                <h2>MORE WAYS TO STEP INTO THE SPOTLIGHT.</h2>
-            </div>
-            <p>Depending on age, level and placement, dancers may participate in performance classes, competition teams, community events, workshops and special appearances.</p>
-        </div>
-        <div class="feature-cards">
-            <article>
-                <span>Performance Class</span>
-                <h3>Build Stage Confidence</h3>
-                <p>Additional opportunities such as community events and performances help younger dancers prepare for deeper involvement in dance.</p>
-            </article>
-            <article>
-                <span>Junior / Senior Production</span>
-                <h3>Earn The Opening Spot</h3>
-                <p>Audition-based groups provide qualified Dance Place students with a special role in spring recital productions.</p>
-            </article>
-            <article>
-                <span>Competition Teams</span>
-                <h3>Push Beyond The Home Studio</h3>
-                <p>Selected dancers train and compete regionally and nationally while also participating in non-competitive appearances and experiences.</p>
-            </article>
-        </div>
+    <div class="performance-hero-note">
+      <span>At A Glance</span>
+      <strong>There is a performance path for every kind of dancer.</strong>
+      <p>From the annual recital to audition-based teams and student-created work, dancers can grow into bigger opportunities over time.</p>
     </div>
+  </div>
 </section>
-<section class="facility-band">
-    <div class="page-shell">
-        <span class="eyebrow light">Past & Ongoing Opportunities</span>
-        <h2>THE STAGE CAN BE ANYWHERE.</h2><div class="pill-grid"><span>Community Parades</span><span>Oakland Dance Festival</span><span>Master Classes</span><span>Summer Intensive</span><span>Guest Artists</span><span>In-House Convention</span><span>Community Performances</span><span>Spring Recitals</span></div></div></section>
-<section class="page-cta">
-    <div class="page-shell">
-        <div>
-            <span class="eyebrow">Want More Than Recreational?</span><h2>EXPLORE THE ACCELERATED PATH.</h2></div><div class="cta-actions"><a class="button button-primary" href="{% url 'programs' %}#accelerated">Accelerated Program <span>→</span></a></div></div></section>
+
+<section class="performance-section">
+  <div class="page-shell">
+    <div class="performance-section-heading">
+      <div>
+        <span class="eyebrow">Ways To Perform</span>
+        <h2>FIND YOUR STAGE.</h2>
+      </div>
+      <p>Five opportunities. Clear paths. No wall of text.</p>
+    </div>
+
+    <div class="performance-featured-card">
+      <div class="performance-featured-number">01</div>
+      <div class="performance-featured-copy">
+        <span class="performance-card-kicker">Annual Spring Recital</span>
+        <h3>Celebrate The Season</h3>
+        <p>All recreational classes come together for an end-of-season performance celebrating each dancer's progress, hard work and growth.</p>
+      </div>
+      <div class="performance-featured-tag">All Recreational Classes</div>
+    </div>
+
+    <div class="performance-card-grid">
+      <article class="performance-card">
+        <span class="performance-card-number">02</span>
+        <div><span class="performance-card-kicker">Performance Class</span><h3>Ages 5–7</h3><p>Teacher-recommended dancers build confidence through community performances, parades, outreach events and one competition.</p></div>
+        <span class="performance-card-pill">Teacher Recommended</span>
+      </article>
+
+      <article class="performance-card">
+        <span class="performance-card-number">03</span>
+        <div><span class="performance-card-kicker">Junior & Senior Production Line</span><h3>Ages 8–18</h3><p>Audition-based dancers learn choreography, staging, character work and teamwork while preparing the recital's opening production.</p></div>
+        <span class="performance-card-pill">Audition Based</span>
+      </article>
+
+      <article class="performance-card">
+        <span class="performance-card-number">04</span>
+        <div><span class="performance-card-kicker">Competition Team</span><h3>Train. Perform. Grow.</h3><p>Dedicated dancers train across multiple styles while participating in competitions, conventions, community events and summer intensive training.</p></div>
+        <span class="performance-card-pill">Audition Based</span>
+      </article>
+
+      <article class="performance-card">
+        <span class="performance-card-number">05</span>
+        <div><span class="performance-card-kicker">Student Choreography Concert</span><h3>Create Something Original</h3><p>Student choreographers develop an original piece from concept to performance, then present it in a professional-style concert and gala.</p></div>
+        <span class="performance-card-pill">Student Created</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="performance-band">
+  <div class="page-shell performance-band-layout">
+    <div><span class="eyebrow light">More Than A Performance</span><h2>CONFIDENCE.<br>TEAMWORK.<br>ARTISTRY.</h2></div>
+    <div class="performance-band-points">
+      <span>Stage Experience</span><span>Community Performances</span><span>Competition Opportunities</span><span>Creative Development</span>
+    </div>
+  </div>
+</section>
+
+<section class="page-cta performance-cta">
+  <div class="page-shell">
+    <div><span class="eyebrow">Ready For More?</span><h2>EXPLORE THE PROGRAMS.</h2></div>
+    <div class="cta-actions">
+      <a class="button button-primary" href="{% url 'programs' %}">View Programs <span>→</span></a>
+      <a class="button button-outline" href="{% url 'registration' %}">Registration <span>→</span></a>
+    </div>
+  </div>
+</section>
+
 {% endblock %}

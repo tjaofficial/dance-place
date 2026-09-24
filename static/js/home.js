@@ -80,3 +80,52 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+
+// Community performance photo slideshow
+document.addEventListener("DOMContentLoaded", () => {
+    const slideshow = document.querySelector("[data-community-slideshow]");
+    if (!slideshow) return;
+
+    const slides = [...slideshow.querySelectorAll(".community-photo-slide")];
+    const dots = [...slideshow.querySelectorAll(".community-photo-dots span")];
+    if (slides.length < 2) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let current = 0;
+    let timer = null;
+
+    const showSlide = (index) => {
+        slides[current].classList.remove("is-active");
+        dots[current]?.classList.remove("is-active");
+
+        current = (index + slides.length) % slides.length;
+
+        slides[current].classList.add("is-active");
+        dots[current]?.classList.add("is-active");
+    };
+
+    const start = () => {
+        if (reduceMotion || timer) return;
+        timer = window.setInterval(() => showSlide(current + 1), 4800);
+    };
+
+    const stop = () => {
+        if (!timer) return;
+        window.clearInterval(timer);
+        timer = null;
+    };
+
+    slideshow.addEventListener("mouseenter", stop);
+    slideshow.addEventListener("mouseleave", start);
+    slideshow.addEventListener("focusin", stop);
+    slideshow.addEventListener("focusout", start);
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stop();
+        else start();
+    });
+
+    start();
+});

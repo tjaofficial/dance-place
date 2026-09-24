@@ -695,3 +695,148 @@
     }
 }
 
+
+
+/* =========================================================
+   UPDATED PRIMARY LOGO
+========================================================= */
+
+.brand-logo {
+    width: 150px;
+    height: 82px;
+    overflow: visible;
+}
+
+.brand-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+@media (max-width: 1180px) and (min-width: 851px) {
+    .brand-logo {
+        width: 128px;
+        height: 72px;
+    }
+}
+
+@media (max-width: 850px) {
+    .brand {
+        gap: 0;
+    }
+
+    .brand-logo {
+        width: 102px;
+        height: 62px;
+    }
+
+    .brand-name {
+        display: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .brand-logo {
+        width: 92px;
+        height: 56px;
+    }
+}
+
+@media (max-width: 390px) {
+    .brand-logo {
+        width: 84px;
+        height: 52px;
+    }
+}
+
+/* =========================================================
+   PRIMARY HEADER — NEW LOGO CONTRAST
+========================================================= */
+
+.site-header-inner {
+    background:
+        radial-gradient(circle at 8% 0%, rgba(116,71,255,.34), transparent 28%),
+        radial-gradient(circle at 88% 120%, rgba(52,120,255,.26), transparent 30%),
+        linear-gradient(115deg, #080a12 0%, #15102b 50%, #0b2542 100%);
+    border-bottom: 1px solid rgba(255,255,255,.10);
+    box-shadow: 0 10px 34px rgba(8,10,24,.16);
+    backdrop-filter: blur(18px);
+}
+
+.site-header-inner .nav-container {
+    min-height: 108px;
+}
+
+.site-header-inner .brand-logo {
+    width: 174px;
+    height: 96px;
+}
+
+.site-header-inner .nav-link,
+.site-header-inner .nav-dropdown-toggle {
+    color: rgba(255,255,255,.90);
+}
+
+.site-header-inner .nav-link:hover,
+.site-header-inner .nav-link.active,
+.site-header-inner .nav-dropdown-toggle:hover,
+.site-header-inner .nav-dropdown-toggle:focus-visible {
+    color: #ffffff;
+}
+
+.site-header-inner .nav-link::after {
+    background: linear-gradient(90deg, #b62cff, #29b8ff);
+}
+
+.site-header-inner .nav-dropdown-chevron {
+    color: #8fdcff;
+}
+
+/* Dropdown itself stays light for readability. */
+.site-header-inner .nav-dropdown-menu .nav-dropdown-link {
+    color: var(--black);
+}
+
+@media (max-width: 1180px) and (min-width: 851px) {
+    .site-header-inner .brand-logo {
+        width: 148px;
+        height: 84px;
+    }
+
+    .site-header-inner .nav-container {
+        min-height: 96px;
+    }
+}
+
+@media (max-width: 850px) {
+    .site-header-inner .nav-container {
+        min-height: 84px;
+    }
+
+    .site-header-inner .brand-logo {
+        width: 122px;
+        height: 72px;
+    }
+
+    .site-header-inner .mobile-menu-button {
+        border-color: rgba(162,91,255,.8);
+        background: rgba(255,255,255,.96);
+        box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    }
+}
+
+@media (max-width: 560px) {
+    .site-header-inner .brand-logo {
+        width: 112px;
+        height: 66px;
+    }
+}
+
+@media (max-width: 390px) {
+    .site-header-inner .brand-logo {
+        width: 102px;
+        height: 60px;
+    }
+}

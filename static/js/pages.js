@@ -106,68 +106,79 @@
   if (!finders.length) return;
 
   finders.forEach((finder) => {
-    const levelButtons = [...finder.querySelectorAll('[data-level-value]')];
-    const ageButtons = [...finder.querySelectorAll('[data-age-value]')];
+    const ageInput = finder.querySelector('[data-age-input]');
+    const styleSelect = finder.querySelector('[data-style-select]');
+    const levelSelect = finder.querySelector('[data-level-select]');
     const summary = finder.querySelector('[data-class-finder-summary]');
     const action = finder.querySelector('[data-class-finder-button]');
-    const progressSteps = [...finder.querySelectorAll('.class-finder-progress span')];
 
-    let selectedLevel = null;
-    let selectedLevelLabel = '';
-    let selectedAge = null;
-    let selectedAgeLabel = '';
+    const getAge = () => {
+      if (!ageInput) return null;
+      const value = ageInput.value.trim();
+      if (!value) return null;
 
-    const updateUI = () => {
-      const hasLevel = Boolean(selectedLevel);
-      const hasAge = Boolean(selectedAge);
-
-      progressSteps.forEach((step, index) => {
-        step.classList.toggle('is-active', index === 0 || (index === 1 && hasLevel) || (index === 2 && hasLevel && hasAge));
-      });
-
-      if (summary) {
-        if (!hasLevel && !hasAge) {
-          summary.textContent = 'Select a level and age group';
-        } else if (hasLevel && !hasAge) {
-          summary.textContent = `Level ${selectedLevel}: ${selectedLevelLabel} · Choose an age group`;
-        } else {
-          summary.textContent = `Level ${selectedLevel}: ${selectedLevelLabel} · ${selectedAgeLabel}`;
-        }
-      }
-
-      if (action) {
-        const ready = hasLevel && hasAge;
-        action.classList.toggle('is-disabled', !ready);
-        action.setAttribute('aria-disabled', String(!ready));
-
-        if (ready) {
-          const url = new URL(action.getAttribute('href'), window.location.origin);
-          url.searchParams.set('level', selectedLevel);
-          url.searchParams.set('age', selectedAge);
-          action.setAttribute('href', `${url.pathname}${url.search}`);
-        }
-      }
+      const age = Number(value);
+      if (!Number.isInteger(age) || age < 1 || age > 99) return null;
+      return age;
     };
 
-    levelButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        levelButtons.forEach((item) => item.classList.remove('is-selected'));
-        button.classList.add('is-selected');
-        selectedLevel = button.dataset.levelValue;
-        selectedLevelLabel = button.dataset.levelLabel || button.textContent.trim();
-        updateUI();
-      });
-    });
+    const updateUI = () => {
+      const age = getAge();
+      const style = styleSelect?.value || '';
+      const level = levelSelect?.value || '';
+      const ready = age !== null && Boolean(style);
 
-    ageButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        ageButtons.forEach((item) => item.classList.remove('is-selected'));
-        button.classList.add('is-selected');
-        selectedAge = button.dataset.ageValue;
-        selectedAgeLabel = button.textContent.trim();
-        updateUI();
-      });
-    });
+      if (ageInput) {
+        ageInput.classList.toggle('is-valid', age !== null);
+        ageInput.classList.toggle(
+          'is-invalid',
+          Boolean(ageInput.value.trim()) && age === null
+        );
+      }
+
+      if (summary) {
+        if (!age && !style) {
+          summary.textContent = 'Enter an age and choose a style';
+        } else if (!age) {
+          summary.textContent = `${style} · Enter dancer's age`;
+        } else if (!style) {
+          summary.textContent = `Age ${age} · Choose a dance style`;
+        } else {
+          const levelText = level ? ` · Level ${level}` : ' · Any level';
+          summary.textContent = `Age ${age} · ${style}${levelText}`;
+        }
+      }
+
+      if (!action) return;
+
+      action.classList.toggle('is-disabled', !ready);
+      action.setAttribute('aria-disabled', String(!ready));
+
+      const baseHref = action.dataset.baseHref || action.getAttribute('href');
+      if (!action.dataset.baseHref) action.dataset.baseHref = baseHref;
+
+      if (!ready) {
+        action.setAttribute('href', action.dataset.baseHref);
+        return;
+      }
+
+      const url = new URL(action.dataset.baseHref, window.location.origin);
+      url.searchParams.set('age_group', age);
+      url.searchParams.set('class_type', style);
+
+      if (level) {
+        url.searchParams.set('level', level);
+      } else {
+        url.searchParams.delete('level');
+      }
+
+      action.setAttribute('href', `${url.pathname}${url.search}`);
+    };
+
+    ageInput?.addEventListener('input', updateUI);
+    ageInput?.addEventListener('change', updateUI);
+    styleSelect?.addEventListener('change', updateUI);
+    levelSelect?.addEventListener('change', updateUI);
 
     updateUI();
   });

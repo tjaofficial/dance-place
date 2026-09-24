@@ -28,6 +28,40 @@ def registration(request):
     return render(request, "website/registration.html")
 
 
+
+def schedule(request):
+    from urllib.parse import urlencode
+
+    base_url = "http://127.0.0.1:8000/registration/embed/pizza-moves/classes/"
+
+    allowed_params = (
+        "q",
+        "class_type",
+        "age_group",
+        "age",
+        "min_age",
+        "max_age",
+        "level",
+        "season",
+        "availability",
+        "hide_filters",
+    )
+
+    query = {
+        name: request.GET.get(name, "").strip()
+        for name in allowed_params
+        if request.GET.get(name, "").strip()
+    }
+
+    query_string = urlencode(query)
+    encore_widget_url = f"{base_url}?{query_string}" if query_string else base_url
+
+    return render(
+        request,
+        "website/schedule.html",
+        {"encore_widget_url": encore_widget_url},
+    )
+
 def performances(request):
     return render(request, "website/performances.html")
 

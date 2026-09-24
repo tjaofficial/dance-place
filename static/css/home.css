@@ -3222,3 +3222,105 @@
     }
 }
 
+
+
+/* =========================================================
+   COMMUNITY PERFORMANCE PHOTO SLIDESHOW
+========================================================= */
+
+.community-photo-slides {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.community-photo-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    opacity: 0;
+    transform: scale(1.025);
+    transition:
+        opacity .9s ease,
+        transform 5.5s ease;
+}
+
+.community-photo-slide.is-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.community-photo-overlay {
+    z-index: 2;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(26, 20, 80, 0.22),
+            rgba(17, 20, 58, 0.04) 48%,
+            rgba(20, 17, 68, 0.10)
+        );
+}
+
+.community-photo-caption {
+    z-index: 4;
+}
+
+.community-photo-dots {
+    position: absolute;
+    z-index: 5;
+    right: 22px;
+    bottom: 22px;
+    display: flex;
+    gap: 7px;
+    padding: 7px 9px;
+    border: 1px solid rgba(255,255,255,.20);
+    border-radius: 999px;
+    background: rgba(16,20,60,.20);
+    backdrop-filter: blur(10px);
+}
+
+.community-photo-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.42);
+    transition: width .25s ease, background .25s ease;
+}
+
+.community-photo-dots span.is-active {
+    width: 19px;
+    border-radius: 999px;
+    background: #fff;
+}
+
+/* Old confidence / connection pill bubbles are no longer used. */
+.community-outline-card {
+    display: none;
+}
+
+@media (max-width: 650px) {
+    .community-photo-dots {
+        right: 14px;
+        bottom: 14px;
+    }
+
+    .community-photo-caption {
+        max-width: calc(100% - 96px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .community-photo-slide {
+        transition: opacity .35s ease;
+        transform: none;
+    }
+
+    .community-photo-slide.is-active {
+        transform: none;
+    }
+}
