@@ -391,3 +391,33 @@
         height: 165px;
     }
 }
+
+
+
+/* =========================================================
+   WEBSITE CREDIT
+========================================================= */
+
+.footer-bottom-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-bottom .footer-site-credit {
+    color: rgba(255, 255, 255, .34);
+    font-size: 9px;
+    letter-spacing: .2px;
+}
+
+.footer-bottom .footer-site-credit span {
+    color: rgba(174, 188, 255, .78);
+    font-weight: 800;
+}
+
+@media (max-width: 650px) {
+    .footer-bottom-copy {
+        gap: 7px;
+    }
+}
+

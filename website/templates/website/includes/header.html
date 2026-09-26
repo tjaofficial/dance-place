@@ -3,6 +3,9 @@
     <div class="nav-container">
         <a href="{% url 'home' %}" class="brand" aria-label="The Dance Place home">
             <div class="brand-logo"><img src="{% static 'images/dance_place_logo.png' %}" alt="The Dance Place logo"></div>
+            <div class="brand-legacy-logo" aria-label="Legacy Dance Place logo">
+                <img src="{% static 'images/dance_place_legacy_logo.png' %}" alt="Legacy Dance Place logo">
+            </div>
         </a>
 
         <button class="mobile-menu-button" id="mobileMenuButton" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
@@ -28,7 +31,6 @@
                 </div>
             </div>
 
-            <a href="{% url 'programs' %}" class="nav-link">Programs</a>
             <a href="{% url 'performances' %}" class="nav-link">Performances</a>
             <a href="{% url 'calendar' %}" class="nav-link">Calendar</a>
             <a href="{% url 'contact' %}" class="nav-link">Get In Touch</a>

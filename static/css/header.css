@@ -829,3 +829,89 @@
         height: 64px;
     }
 }
+
+
+
+/* =========================================================
+   HEADER — LEGACY LOGO BESIDE PRIMARY LOGO
+========================================================= */
+
+.brand {
+    gap: 12px;
+}
+
+.brand-legacy-logo {
+    position: relative;
+    width: 115px;
+    height: 98px;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-legacy-logo img {
+    display: block;
+    width: 114%;
+    height: 84%;
+    max-width: none;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,.16));
+}
+
+/* Tighten the combined lockup before the navigation starts feeling cramped. */
+@media (max-width: 1260px) and (min-width: 851px) {
+    .brand {
+        gap: 9px;
+    }
+
+    .brand-legacy-logo {
+        width: 76px;
+        height: 54px;
+        padding-left: 9px;
+    }
+}
+
+@media (max-width: 850px) {
+    .brand {
+        gap: 8px;
+    }
+
+    .brand-legacy-logo {
+        width: 64px;
+        height: 46px;
+        padding-left: 8px;
+        border-left-color: rgba(255,255,255,.18);
+    }
+}
+
+@media (max-width: 560px) {
+    .brand {
+        gap: 6px;
+    }
+
+    .brand-logo {
+        width: 104px;
+        height: 62px;
+    }
+
+    .brand-legacy-logo {
+        width: 52px;
+        height: 40px;
+        padding-left: 6px;
+    }
+}
+
+@media (max-width: 390px) {
+    .brand-logo {
+        width: 94px;
+        height: 58px;
+    }
+
+    .brand-legacy-logo {
+        width: 46px;
+        height: 36px;
+    }
+}
+

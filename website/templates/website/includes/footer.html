@@ -19,5 +19,14 @@
         <div class="footer-column"><h4>Families</h4><a href="{% url 'registration' %}">Registration</a><a href="https://app.thestudiodirector.com/danceplaceltd/portal.sd?page=Login" target="_blank" rel="noopener">Parent Portal</a><a href="{% url 'faq' %}">FAQ</a><a href="{% url 'contact' %}">Get In Touch</a></div>
         <div class="footer-column"><h4>Studio</h4><p>7544 Highland Road</p><p>Waterford, MI 48327</p><a href="tel:2486669929">248-666-9929</a></div>
     </div>
-    <div class="footer-bottom"><p>© <span id="currentYear"></span> The Dance Place . All rights reserved.</p><div class="footer-bottom-links"><a href="{% url 'faq' %}">Studio Info</a><a href="{% url 'contact' %}">Accessibility</a></div></div>
+    <div class="footer-bottom">
+        <div class="footer-bottom-copy">
+            <p>© <span id="currentYear"></span> The Dance Place . All rights reserved.</p>
+            <p class="footer-site-credit">Website designed &amp; developed by <span>Voxol Universe LLC</span></p>
+        </div>
+        <div class="footer-bottom-links">
+            <a href="{% url 'faq' %}">Studio Info</a>
+            <a href="{% url 'contact' %}">Accessibility</a>
+        </div>
+    </div>
 </footer>

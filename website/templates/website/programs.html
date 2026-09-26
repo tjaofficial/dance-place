@@ -12,7 +12,16 @@
     </div>
     <div class="page-hero-card stat-card">
       <span>Styles Offered</span>
-      <strong>Ballet • Tap • Jazz • Contemporary • Hip Hop • Acro • Pointe</strong>
+      <div class="program-style-list" aria-label="Dance styles offered">
+        <button type="button" class="program-style-tip">Ballet<span role="tooltip">Classical technique focused on posture, alignment, control, strength and graceful movement.</span></button><span class="program-style-separator">•</span>
+        <button type="button" class="program-style-tip">Tap<span role="tooltip">Rhythm-based dance using tap shoes to create musical patterns, timing and footwork.</span></button><span class="program-style-separator">•</span>
+        <button type="button" class="program-style-tip">Jazz<span role="tooltip">Energetic training that builds flexibility, turns, jumps, musicality and performance style.</span></button><span class="program-style-separator">•</span>
+        <button type="button" class="program-style-tip">Contemporary<span role="tooltip">Expressive movement blending ballet and modern technique with musicality, flow and emotion.</span></button><span class="program-style-separator">•</span>
+        <button type="button" class="program-style-tip">Hip Hop<span role="tooltip">High-energy movement focused on groove, rhythm, musicality, coordination and performance.</span></button><span class="program-style-separator">•</span>
+        <button type="button" class="program-style-tip">Acro<span role="tooltip">Dance-based acrobatics that develop strength, flexibility, balance and controlled tumbling skills.</span></button><span class="program-style-separator">•</span>
+        <button type="button" class="program-style-tip">Pointe<span role="tooltip">Advanced ballet training performed in pointe shoes for dancers with proper technique and placement.</span></button><span class="program-style-separator">•</span>
+        <button type="button" class="program-style-tip">Technique<span role="tooltip">Focused skill-building for strength, flexibility, turns, jumps, control and cleaner execution.</span></button>
+      </div>
       <p>Class availability varies by age, level and season.</p>
     </div>
   </div>
@@ -66,7 +75,7 @@
       <article class="program-level-card program-level-card-accelerated">
         <span class="program-level-number">05</span>
         <div>
-          <strong>Professional</strong>
+          <strong>Pre-Pro</strong>
           <p>Highest-level training for dancers placed into the studio's advanced pathway.</p>
         </div>
         <span class="program-level-status">Teacher Placement</span>
@@ -74,8 +83,74 @@
     </div>
 
     <p class="program-level-note">
-      Accelerated levels are teacher-recommended and placed by studio staff. Recreational dancers age 7+ may enroll online without placement.
+      Accelerated levels are teacher-recommended and placed by studio staff. All recreational classes may be enrolled in online without placement.
     </p>
+  </div>
+</section>
+
+<section class="program-search-section">
+  <div class="page-shell">
+    <div class="program-search-layout">
+      <div class="program-search-copy">
+        <span class="eyebrow">Find Your Classes</span>
+        <h2>TELL US ABOUT YOUR DANCER.</h2>
+        <p>Enter an age and choose a dance style. Add a level only if you already know it.</p>
+
+        <div class="program-search-note">
+          <span>Important</span>
+          <p>Accelerated classes may appear in your results, but enrollment requires teacher recommendation and studio placement.</p>
+        </div>
+      </div>
+
+      <div class="program-search-card" data-class-finder>
+        <div class="program-search-fields program-search-fields-main">
+          <div class="program-search-field">
+            <label for="program-search-age">Dancer's Age</label>
+            <div class="age-input-shell">
+              <input id="program-search-age" class="class-finder-age-input" type="number" inputmode="numeric" min="1" max="99" step="1" data-age-input>
+              <span class="age-input-suffix">years old</span>
+            </div>
+          </div>
+          <div class="program-search-field">
+            <label for="program-search-style">Dance Style</label>
+            <select id="program-search-style" data-style-select>
+              <option value="">Choose a style</option>
+              <option value="Ballet">Ballet</option><option value="Tap">Tap</option><option value="Jazz">Jazz</option>
+              <option value="Contemporary">Contemporary</option><option value="Hip Hop">Hip Hop</option><option value="Acro">Acro</option>
+              <option value="Pointe">Pointe</option><option value="Technique">Technique</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="program-search-level-picker">
+          <legend>Choose a Level <span>Optional</span></legend>
+          <div class="program-search-level-options">
+            <button type="button" class="program-search-level-option is-selected" data-level-button="" aria-pressed="true"><strong>Any Level</strong><small>Show all matches</small></button>
+            <button type="button" class="program-search-level-option" data-level-button="1" aria-pressed="false"><strong>Level 1</strong><small>Beginner / Base Skill</small></button>
+            <button type="button" class="program-search-level-option" data-level-button="2" aria-pressed="false"><strong>Level 2</strong><small>Experienced / Beginner</small></button>
+            <button type="button" class="program-search-level-option" data-level-button="3" aria-pressed="false"><strong>Level 3</strong><small>Intermediate / Competitive</small></button>
+            <button type="button" class="program-search-level-option" data-level-button="4" aria-pressed="false"><strong>Level 4</strong><small>Advanced</small></button>
+            <button type="button" class="program-search-level-option" data-level-button="5" aria-pressed="false"><strong>Level 5</strong><small>Pre-Pro</small></button>
+          </div>
+        </fieldset>
+
+        <div class="program-search-action">
+          <div class="class-finder-selection" aria-live="polite">
+            <span>Your Search</span>
+            <strong data-class-finder-summary>Enter an age and choose a style</strong>
+          </div>
+
+          <a
+            href="{% url 'schedule' %}"
+            class="button button-primary class-finder-button is-disabled"
+            data-class-finder-button
+            aria-disabled="true"
+          >
+            See Classes <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -132,101 +207,34 @@
 
       <article class="program-list-item" id="short-takes" tabindex="0">
         <div class="program-list-title">
-          <span class="eyebrow">Short-Takes & Special Programs</span>
+          <span class="eyebrow">Short-Takes</span>
           <h2>Six Week Sessions (Short-Takes)</h2>
         </div>
-        <p class="program-list-summary">Short-format sessions and specialty offerings for families who want to try something new.</p>
+        <p class="program-list-summary">Short-format sessions designed for younger dancers and families who want a flexible introduction to dance.</p>
         <span class="program-list-arrow" aria-hidden="true">→</span>
-        <div class="program-list-details">
-          <div>
-            <p>Offerings may include Mommy & Me, Pre-School Ballet, Summer Dance Camps, My Ability Dance, Ballroom, workshops and seasonal intensives.</p>
-            <p class="muted-note">Programs and dates change throughout the year.</p>
-          </div>
+        <div class="program-list-details"><div>
+          <p>Short-Takes include Mommy &amp; Me and Pre-School offerings in a shorter six-week format that makes it easy for young dancers to get started.</p>
+          <p class="muted-note">Programs and dates change throughout the year.</p>
+        </div></div>
+      </article>
+
+      <article class="program-list-item" id="specialty" tabindex="0">
+        <div class="program-list-title">
+          <span class="eyebrow">Specialty Programs</span>
+          <h2>Private Lessons &amp; Specialty Classes</h2>
         </div>
+        <p class="program-list-summary">Flexible specialty training for dancers, adults, couples and families looking for something beyond the traditional class schedule.</p>
+        <span class="program-list-arrow" aria-hidden="true">→</span>
+        <div class="program-list-details"><div>
+          <p>Offerings may include Ballroom, Summer Dance, Wedding Dances, Private Lessons, workshops and seasonal intensives.</p>
+          <p class="muted-note">Programs and availability may change throughout the year.</p>
+        </div></div>
       </article>
     </div>
   </div>
 </section>
 
-<section class="program-search-section">
-  <div class="page-shell">
-    <div class="program-search-layout">
-      <div class="program-search-copy">
-        <span class="eyebrow">Find Your Classes</span>
-        <h2>TELL US ABOUT YOUR DANCER.</h2>
-        <p>Enter an age and choose a dance style. Add a level only if you already know it.</p>
 
-        <div class="program-search-note">
-          <span>Important</span>
-          <p>Accelerated classes may appear in your results, but enrollment requires teacher recommendation and studio placement.</p>
-        </div>
-      </div>
-
-      <div class="program-search-card" data-class-finder>
-        <div class="program-search-fields">
-          <div class="program-search-field">
-            <label for="program-search-age">Dancer's Age</label>
-            <div class="age-input-shell">
-              <input
-                id="program-search-age"
-                class="class-finder-age-input"
-                type="number"
-                inputmode="numeric"
-                min="1"
-                max="99"
-                step="1"
-                data-age-input
-              >
-              <span class="age-input-suffix">years old</span>
-            </div>
-          </div>
-
-          <div class="program-search-field">
-            <label for="program-search-style">Dance Style</label>
-            <select id="program-search-style" data-style-select>
-              <option value="">Choose a style</option>
-              <option value="Ballet">Ballet</option>
-              <option value="Tap">Tap</option>
-              <option value="Jazz">Jazz</option>
-              <option value="Contemporary">Contemporary</option>
-              <option value="Hip Hop">Hip Hop</option>
-              <option value="Acro">Acro</option>
-              <option value="Pointe">Pointe</option>
-            </select>
-          </div>
-
-          <div class="program-search-field">
-            <label for="program-search-level">Level <span>Optional</span></label>
-            <select id="program-search-level" data-level-select>
-              <option value="">Any Level</option>
-              <option value="1">Level 1 — Beginner / Base Skill</option>
-              <option value="2">Level 2 — Experienced / Beginner</option>
-              <option value="3">Level 3 — Intermediate / Competitive</option>
-              <option value="4">Level 4 — Advanced</option>
-              <option value="5">Level 5 — Professional</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="program-search-action">
-          <div class="class-finder-selection" aria-live="polite">
-            <span>Your Search</span>
-            <strong data-class-finder-summary>Enter an age and choose a style</strong>
-          </div>
-
-          <a
-            href="{% url 'schedule' %}"
-            class="button button-primary class-finder-button is-disabled"
-            data-class-finder-button
-            aria-disabled="true"
-          >
-            See Classes <span>→</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="page-cta">
   <div class="page-shell">

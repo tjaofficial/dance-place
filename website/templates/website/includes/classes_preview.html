@@ -14,14 +14,14 @@
             <p class="classes-description">
                 Ballet, tap, jazz, contemporary, hip hop, acro, pointe and more — with recreational and accelerated pathways designed to meet dancers where they are and help them grow.
             </p>
-            <a href="{% url 'programs' %}" class="button button-primary">
-                Explore All Programs <span>→</span>
+            <a href="{% url 'registration' %}" class="button button-primary">
+                Register Now <span>→</span>
             </a>
         </div>
 
         <div class="class-grid">
-            <a href="{% url 'programs' %}#recreational" class="class-card">
-                <div class="class-image class-image-one">
+            <article class="class-card" data-style-card>
+<div class="class-image class-image-one">
                     <img class="class-dancer class-dancer-hiphop" src="{% static 'images/hiphop_dance.png' %}" alt="Hip hop dancer">
                     <div class="class-image-label">ENERGY + CONFIDENCE</div>
                 </div>
@@ -29,12 +29,17 @@
                     <div>
                         <h3>Hip Hop</h3>
                     </div>
-                    <div class="class-arrow">→</div>
+                    <button type="button" class="class-info-button" data-style-info-button aria-expanded="false" aria-label="Learn about Hip Hop">
+                        <span aria-hidden="true">?</span>
+                    </button>
+                    <div class="class-info-popup" data-style-info-popup role="dialog" aria-label="Hip Hop description">
+                        <strong>Hip Hop</strong>
+                        <p>High-energy dance focused on groove, rhythm, musicality, coordination and confident performance.</p>
+                    </div>
                 </div>
-            </a>
-
-            <a href="{% url 'programs' %}#recreational" class="class-card">
-                <div class="class-image class-image-two">
+            </article>
+            <article class="class-card" data-style-card>
+<div class="class-image class-image-two">
                     <img class="class-dancer class-dancer-ballet" src="{% static 'images/ballet_dance.png' %}" alt="Ballet dancer">
                     <div class="class-image-label">FOUNDATION + FORM</div>
                 </div>
@@ -42,12 +47,17 @@
                     <div>
                         <h3>Ballet</h3>
                     </div>
-                    <div class="class-arrow">→</div>
+                    <button type="button" class="class-info-button" data-style-info-button aria-expanded="false" aria-label="Learn about Ballet">
+                        <span aria-hidden="true">?</span>
+                    </button>
+                    <div class="class-info-popup" data-style-info-popup role="dialog" aria-label="Ballet description">
+                        <strong>Ballet</strong>
+                        <p>Classical training that builds posture, alignment, control, strength, balance and graceful movement.</p>
+                    </div>
                 </div>
-            </a>
-
-            <a href="{% url 'programs' %}#recreational" class="class-card">
-                <div class="class-image class-image-three">
+            </article>
+            <article class="class-card" data-style-card>
+<div class="class-image class-image-three">
                     <img class="class-dancer class-dancer-tap" src="{% static 'images/tap_dance.png' %}" alt="Tap dancer">
                     <div class="class-image-label">RHYTHM + MUSICALITY</div>
                 </div>
@@ -55,12 +65,17 @@
                     <div>
                         <h3>Tap</h3>
                     </div>
-                    <div class="class-arrow">→</div>
+                    <button type="button" class="class-info-button" data-style-info-button aria-expanded="false" aria-label="Learn about Tap">
+                        <span aria-hidden="true">?</span>
+                    </button>
+                    <div class="class-info-popup" data-style-info-popup role="dialog" aria-label="Tap description">
+                        <strong>Tap</strong>
+                        <p>Rhythm-based dance using tap shoes to create musical patterns while developing timing, coordination and footwork.</p>
+                    </div>
                 </div>
-            </a>
-
-            <a href="{% url 'programs' %}#recreational" class="class-card">
-                <div class="class-image class-image-four">
+            </article>
+            <article class="class-card" data-style-card>
+<div class="class-image class-image-four">
                     <img class="class-dancer class-dancer-jazz" src="{% static 'images/jazz_dance.png' %}" alt="Jazz dancer">
                     <div class="class-image-label">STYLE + PERFORMANCE</div>
                 </div>
@@ -68,12 +83,17 @@
                     <div>
                         <h3>Jazz</h3>
                     </div>
-                    <div class="class-arrow">→</div>
+                    <button type="button" class="class-info-button" data-style-info-button aria-expanded="false" aria-label="Learn about Jazz">
+                        <span aria-hidden="true">?</span>
+                    </button>
+                    <div class="class-info-popup" data-style-info-popup role="dialog" aria-label="Jazz description">
+                        <strong>Jazz</strong>
+                        <p>Energetic training that develops flexibility, turns, jumps, musicality and expressive performance style.</p>
+                    </div>
                 </div>
-            </a>
-
-            <a href="{% url 'programs' %}#accelerated" class="class-card">
-                <div class="class-image class-image-three">
+            </article>
+            <article class="class-card" data-style-card>
+<div class="class-image class-image-three">
                     <img class="class-dancer class-dancer-technique" src="{% static 'images/technique_dance.png' %}" alt="Accelerated technique dancer">
                     <div class="class-image-label">TRAIN + GROW</div>
                 </div>
@@ -81,9 +101,63 @@
                     <div>
                         <h3>Technique</h3>
                     </div>
-                    <div class="class-arrow">→</div>
+                    <button type="button" class="class-info-button" data-style-info-button aria-expanded="false" aria-label="Learn about Technique">
+                        <span aria-hidden="true">?</span>
+                    </button>
+                    <div class="class-info-popup" data-style-info-popup role="dialog" aria-label="Technique description">
+                        <strong>Technique</strong>
+                        <p>Focused training for strength, flexibility, turns, jumps, control and cleaner execution across dance styles.</p>
+                    </div>
                 </div>
-            </a>
+            </article>
+            <article class="class-card" data-style-card>
+<div class="class-image class-image-five">
+                    <img class="class-dancer class-dancer-contemporary" src="{% static 'images/contemporary_dance.png' %}" alt="Contemporary dancer">
+                    <div class="class-image-label">EXPRESSION + FLOW</div>
+                </div>
+                <div class="class-card-footer">
+                    <div><h3>Contemporary</h3></div>
+                    <button type="button" class="class-info-button" data-style-info-button aria-expanded="false" aria-label="Learn about Contemporary">
+                        <span aria-hidden="true">?</span>
+                    </button>
+                    <div class="class-info-popup" data-style-info-popup role="dialog" aria-label="Contemporary description">
+                        <strong>Contemporary</strong>
+                        <p>Expressive movement blending ballet and modern technique with musicality, flow, emotion and creative movement.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="class-card" data-style-card>
+<div class="class-image class-image-six">
+                    <img class="class-dancer class-dancer-acrobatics" src="{% static 'images/acrobatics_dance.png' %}" alt="Acrobatics dancer">
+                    <div class="class-image-label">STRENGTH + CONTROL</div>
+                </div>
+                <div class="class-card-footer">
+                    <div><h3>Acrobatics</h3></div>
+                    <button type="button" class="class-info-button" data-style-info-button aria-expanded="false" aria-label="Learn about Acrobatics">
+                        <span aria-hidden="true">?</span>
+                    </button>
+                    <div class="class-info-popup" data-style-info-popup role="dialog" aria-label="Acrobatics description">
+                        <strong>Acrobatics</strong>
+                        <p>Dance-based acro training that develops strength, flexibility, balance, control and age-appropriate tumbling skills.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="class-card" data-style-card>
+<div class="class-image class-image-seven">
+                    <img class="class-dancer class-dancer-pointe" src="{% static 'images/pointe_dance.png' %}" alt="Pointe dancer">
+                    <div class="class-image-label">PRECISION + GRACE</div>
+                </div>
+                <div class="class-card-footer">
+                    <div><h3>Pointe</h3></div>
+                    <button type="button" class="class-info-button" data-style-info-button aria-expanded="false" aria-label="Learn about Pointe">
+                        <span aria-hidden="true">?</span>
+                    </button>
+                    <div class="class-info-popup" data-style-info-popup role="dialog" aria-label="Pointe description">
+                        <strong>Pointe</strong>
+                        <p>Advanced ballet training performed in pointe shoes for dancers with the strength, technique and placement required.</p>
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
 </section>

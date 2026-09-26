@@ -129,3 +129,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
     start();
 });
+
+
+
+// Home style-card info popups
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = [...document.querySelectorAll("[data-style-info-button]")];
+    if (!buttons.length) return;
+
+    const closeAll = (except = null) => {
+        buttons.forEach((button) => {
+            if (button === except) return;
+
+            button.classList.remove("is-open");
+            button.setAttribute("aria-expanded", "false");
+
+            const popup = button.nextElementSibling;
+            if (popup?.matches("[data-style-info-popup]")) {
+                popup.classList.remove("is-open");
+            }
+        });
+    };
+
+    buttons.forEach((button) => {
+        const popup = button.nextElementSibling;
+        if (!popup?.matches("[data-style-info-popup]")) return;
+
+        button.addEventListener("click", (event) => {
+            event.stopPropagation();
+
+            const willOpen = !popup.classList.contains("is-open");
+            closeAll(button);
+
+            popup.classList.toggle("is-open", willOpen);
+            button.classList.toggle("is-open", willOpen);
+            button.setAttribute("aria-expanded", String(willOpen));
+        });
+
+        popup.addEventListener("click", (event) => {
+            event.stopPropagation();
+        });
+    });
+
+    document.addEventListener("click", () => closeAll());
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeAll();
+        }
+    });
+});
+

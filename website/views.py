@@ -32,7 +32,10 @@ def registration(request):
 def schedule(request):
     from urllib.parse import urlencode
 
-    base_url = "http://127.0.0.1:8000/registration/embed/pizza-moves/classes/"
+    base_url = (
+        f"{settings.ENCORE_BASE_URL.rstrip('/')}"
+        "/registration/embed/pizza-moves/classes/"
+    )
 
     allowed_params = (
         "q",

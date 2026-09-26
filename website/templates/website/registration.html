@@ -1,6 +1,6 @@
 {% extends "website/base.html" %}
 {% block title %}Registration | The Dance Place {% endblock %}
-{% block meta_description %}Register for dance classes at The Dance Place . Explore programs, check the current class schedule, and continue to The Studio Director portal to enroll.{% endblock %}
+{% block meta_description %}Register for dance classes at The Dance Place. Learn your options, find available classes by age, style and level, then continue through Encore to complete registration.{% endblock %}
 {% block content %}
 
 <section class="registration-hero-v2" data-pointer-glow>
@@ -8,30 +8,33 @@
     <div class="registration-hero-copy" data-reveal>
       <span class="eyebrow">Registration</span>
       <h1>Find your class.<br><em>Then make it official.</em></h1>
-      <p>Start by exploring the programs that fit your dancer, check the current schedule, and finish registration through The Studio Director.</p>
+      <p>Learn the basics, find classes that match your dancer, then continue through Encore to complete registration.</p>
       <div class="registration-hero-actions">
-        <a class="button button-primary" href="https://app.thestudiodirector.com/danceplaceltd/portal.sd?page=Login" target="_blank" rel="noopener">View Classes & Register <span>↗</span></a>
-        <a class="registration-secondary-link" href="{% url 'programs' %}">Explore programs <span>→</span></a>
+        <a class="button button-primary" href="#registration-flow">Start Here <span>↓</span></a>
+        <a class="registration-secondary-link" href="{% url 'programs' %}">View full programs <span>→</span></a>
       </div>
     </div>
 
     <aside class="registration-quick-card" data-reveal data-pointer-glow>
-      <span class="registration-card-label">Current Class Information</span>
-      <h2>Schedules and openings stay live in Studio Director.</h2>
-      <p>Class days, times, levels, availability, customer accounts, and enrollment are managed there so you always see the most current information.</p>
+      <span class="registration-card-label">A Simpler Way To Register</span>
+      <h2>Learn. Find a class. Register.</h2>
+      <p>The three-step guide below keeps the important information in one place without making families read an entire program guide first.</p>
       <div class="registration-card-note">
         <span class="registration-dot"></span>
-        Registration availability can change as classes fill.
+        Class availability stays live and can change as classes fill.
       </div>
     </aside>
   </div>
 </section>
 
-<section class="registration-flow-section">
+<section class="registration-flow-section" id="registration-flow">
   <div class="page-shell registration-flow-layout">
     <div class="registration-arrow-column" aria-hidden="true" data-reveal>
-      <div class="registration-arrow">
+      <div class="registration-arrow" data-registration-arrow>
         <span class="registration-arrow-line"></span>
+        <span class="registration-arrow-step-dot registration-arrow-step-dot-1" data-registration-arrow-dot="0"></span>
+        <span class="registration-arrow-step-dot registration-arrow-step-dot-2" data-registration-arrow-dot="1"></span>
+        <span class="registration-arrow-step-dot registration-arrow-step-dot-3" data-registration-arrow-dot="2"></span>
         <span class="registration-arrow-head"></span>
       </div>
       <span class="registration-arrow-label">Start here</span>
@@ -41,42 +44,188 @@
       <div class="registration-section-heading" data-reveal>
         <span class="eyebrow">How Registration Works</span>
         <h2>Three simple steps.</h2>
-        <p>Choose the program that fits, check the live schedule, then complete registration and payment through Studio Director.</p>
+        <p>Start with the basics, find classes that match your dancer, then complete registration through Encore.</p>
       </div>
 
       <div class="registration-flow-stack" data-registration-flow>
-        <article class="registration-step-card step-purple" data-registration-step data-reveal>
+        <article class="registration-step-card registration-step-card-expanded step-purple" data-registration-step data-reveal>
           <div class="registration-step-top">
             <span class="registration-step-number">01</span>
-            <span class="registration-step-kicker">Start Here</span>
+            <span class="registration-step-kicker">Learn The Basics</span>
           </div>
+
           <div class="registration-step-content">
-            <h3>Explore Programs</h3>
-            <p>See recreational, accelerated, performance, and short-format options to find the best fit for your dancer.</p>
-            <a href="{% url 'programs' %}">View programs <span>→</span></a>
+            <h3>Explore Your Options</h3>
+            <p>You do not need to know everything before you begin. Open any question below for a quick explanation, then move to Step 2 when you're ready to find classes.</p>
+
+            <div class="registration-info-accordion" data-registration-accordion>
+              <details class="registration-info-item">
+                <summary>What programs are available?<span aria-hidden="true">+</span></summary>
+                <div class="registration-info-answer">
+                  <p>Choose a program below to see a short description.</p>
+                  <div class="registration-program-options">
+                  <button type="button" class="registration-program-chip" data-program-modal-open data-program-title="Recreational Program" data-program-description="Progressive, age-appropriate training for dancers who want to learn, grow and enjoy performing.">
+                    <span>Recreational Program</span>
+                    <b aria-hidden="true">+</b>
+                  </button>
+                  <button type="button" class="registration-program-chip" data-program-modal-open data-program-title="Accelerated Program" data-program-description="Focused training for experienced dancers who are teacher-recommended for the accelerated pathway.">
+                    <span>Accelerated Program</span>
+                    <b aria-hidden="true">+</b>
+                  </button>
+                  <button type="button" class="registration-program-chip" data-program-modal-open data-program-title="Performance &amp; Competition Programs" data-program-description="Additional stage opportunities for dancers interested in performance, competition and community events.">
+                    <span>Performance &amp; Competition Programs</span>
+                    <b aria-hidden="true">+</b>
+                  </button>
+                  <button type="button" class="registration-program-chip" data-program-modal-open data-program-title="Six Week Sessions (Short-Takes)" data-program-description="Short-format sessions and specialty offerings for families who want to try something new.">
+                    <span>Six Week Sessions (Short-Takes)</span>
+                    <b aria-hidden="true">+</b>
+                  </button>
+                  <button type="button" class="registration-program-chip" data-program-modal-open data-program-title="Specialty Programs" data-program-description="More details about specialty program offerings will be added here soon.">
+                    <span>Specialty Programs</span>
+                    <b aria-hidden="true">+</b>
+                  </button>
+                  </div>
+                </div>
+              </details>
+
+              <details class="registration-info-item">
+                <summary>What level should I select?<span aria-hidden="true">+</span></summary>
+                <div class="registration-info-answer">
+                  <p>Levels move from beginner foundations through advanced and professional training. If you are unsure, leave the level open when you search. Accelerated placement is teacher recommended, and the studio can help place your dancer correctly.</p>
+
+                  <div class="registration-level-summary-row" aria-label="Dance levels">
+                    <span><b>1</b> Beginner / Base Skill</span>
+                    <span><b>2</b> Experienced / Beginner</span>
+                    <span><b>3</b> Intermediate / Competitive</span>
+                    <span><b>4</b> Advanced</span>
+                    <span><b>5</b> Professional</span>
+                  </div>
+                </div>
+              </details>
+
+              <details class="registration-info-item">
+                <summary>What styles are available?<span aria-hidden="true">+</span></summary>
+                <div class="registration-info-answer">
+                  <p>Styles include Ballet, Tap, Jazz, Contemporary, Hip Hop, Acrobatics, Pointe and Technique, with additional specialty offerings available throughout the year.</p>
+                </div>
+              </details>
+
+              <details class="registration-info-item">
+                <summary>What age groups are available?<span aria-hidden="true">+</span></summary>
+                <div class="registration-info-answer">
+                  <p>The Dance Place offers options from preschool through adult. Here are the age groups:</p>
+
+                  <div class="registration-age-group-pills" aria-label="Age groups">
+                    <span>Mommy &amp; Me — 18 months–3 years</span>
+                    <span>Pre-School — 3 years–4 years</span>
+                    <span>5–7</span>
+                    <span>8–11</span>
+                    <span>12–18</span>
+                    <span>Adult — 18+</span>
+                  </div>
+
+                  <p class="registration-age-followup">In Step 2, enter the dancer's exact age so the live schedule can show classes that match more accurately.</p>
+                </div>
+              </details>
+            </div>
+
+            <a class="registration-full-programs-link" href="{% url 'programs' %}">Want more detail? View full programs <span>→</span></a>
           </div>
         </article>
 
-        <article class="registration-step-card step-blue" data-registration-step data-reveal>
+        <article class="registration-step-card registration-step-card-expanded step-blue" data-registration-step data-reveal>
           <div class="registration-step-top">
             <span class="registration-step-number">02</span>
-            <span class="registration-step-kicker">See What's Open</span>
+            <span class="registration-step-kicker">Find Your Class</span>
           </div>
+
           <div class="registration-step-content">
             <h3>Check the Live Schedule</h3>
-            <p>Review current class days, times, levels, and availability in the live Dance Place schedule.</p>
-            <a href="{% url 'schedule' %}">Open live schedule <span>→</span></a>
+            <p>Enter the dancer's age, choose a dance style, and select a level if you know it. We'll send those choices to the live schedule, where you can still change the filters and explore other classes.</p>
+
+            <div class="registration-class-finder" data-registration-class-finder>
+              <div class="registration-finder-fields">
+                <label class="registration-finder-field registration-finder-age">
+                  <span>Dancer's Age</span>
+                  <div class="registration-age-shell">
+                    <input type="number" min="1" max="99" inputmode="numeric" autocomplete="off" aria-label="Dancer's age" data-registration-age>
+                    <small>years old</small>
+                  </div>
+                </label>
+
+                <label class="registration-finder-field">
+                  <span>Dance Style</span>
+                  <select data-registration-style>
+                    <option value="">Choose a style</option>
+                    <option value="Ballet">Ballet</option>
+                    <option value="Tap">Tap</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Contemporary">Contemporary</option>
+                    <option value="Hip Hop">Hip Hop</option>
+                    <option value="Acrobatics">Acrobatics</option>
+                    <option value="Pointe">Pointe</option>
+                    <option value="Technique">Technique</option>
+                  </select>
+                </label>
+              </div>
+
+              <fieldset class="registration-level-picker">
+                <legend>Choose a Level <span>optional</span></legend>
+                <div class="registration-level-options">
+                  <button type="button" class="registration-level-option is-selected" data-registration-level="" aria-pressed="true">
+                    <strong>Any Level</strong>
+                    <small>Show all matches</small>
+                  </button>
+                  <button type="button" class="registration-level-option" data-registration-level="1" aria-pressed="false">
+                    <strong>Level 1</strong>
+                    <small>Beginner / Base Skill</small>
+                  </button>
+                  <button type="button" class="registration-level-option" data-registration-level="2" aria-pressed="false">
+                    <strong>Level 2</strong>
+                    <small>Experienced Beginner</small>
+                  </button>
+                  <button type="button" class="registration-level-option" data-registration-level="3" aria-pressed="false">
+                    <strong>Level 3</strong>
+                    <small>Intermediate / Competitive</small>
+                  </button>
+                  <button type="button" class="registration-level-option" data-registration-level="4" aria-pressed="false">
+                    <strong>Level 4</strong>
+                    <small>Advanced</small>
+                  </button>
+                  <button type="button" class="registration-level-option" data-registration-level="5" aria-pressed="false">
+                    <strong>Level 5</strong>
+                    <small>Professional</small>
+                  </button>
+                </div>
+              </fieldset>
+
+              <div class="registration-finder-action">
+                <div>
+                  <span>Your Search</span>
+                  <strong data-registration-finder-summary>Enter an age and choose a style</strong>
+                </div>
+                <a class="button button-primary registration-finder-button is-disabled"
+                   href="{% url 'schedule' %}"
+                   data-registration-finder-button
+                   aria-disabled="true">
+                  See Classes <span>→</span>
+                </a>
+              </div>
+
+              <p class="registration-placement-note"><strong>Not sure about level?</strong> Leave it on Any Level. Accelerated enrollment requires teacher recommendation and proper placement.</p>
+            </div>
           </div>
         </article>
 
-        <article class="registration-step-card step-dark" data-registration-step data-reveal>
+        <article class="registration-step-card registration-step-card-expanded step-dark" data-registration-step data-reveal>
           <div class="registration-step-top">
             <span class="registration-step-number">03</span>
             <span class="registration-step-kicker">Finish Up</span>
           </div>
+
           <div class="registration-step-content">
-            <h3>Complete Registration & Payment</h3>
-            <p>Follow the Studio Director prompts to enroll, complete the required registration form and waiver, and select your preferred payment method. Your registration and first month's tuition secure your dancer's place, and classes are filled on a first-come basis.</p>
+            <h3>Complete Registration In Encore</h3>
+            <p>Once you've found the right class, Encore will guide you through the registration details, required information, waivers and payment needed to complete enrollment.</p>
             <div class="registration-step-actions">
               <button class="tuition-modal-trigger" type="button" data-tuition-open>View tuition rates &amp; cost example <span>→</span></button>
             </div>
@@ -103,6 +252,18 @@
   </div>
 </section>
 
+
+<div class="registration-program-modal" data-program-modal aria-hidden="true">
+  <div class="registration-program-modal-backdrop" data-program-modal-close></div>
+
+  <section class="registration-program-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="registration-program-modal-title">
+    <button class="registration-program-modal-close" type="button" aria-label="Close program information" data-program-modal-close>×</button>
+
+    <span class="eyebrow">Program Information</span>
+    <h2 id="registration-program-modal-title" data-program-modal-title>Program</h2>
+    <p data-program-modal-description></p>
+  </section>
+</div>
 
 <div class="tuition-modal" data-tuition-modal aria-hidden="true">
   <div class="tuition-modal-backdrop" data-tuition-close></div>
@@ -166,7 +327,7 @@
           <small>The $23 is half of the 4th-hour rate of $46.</small>
         </div>
 
-        <p class="tuition-modal-note">This guide is intended to help families estimate monthly tuition. Final enrollment and payment details are completed through The Studio Director.</p>
+        <p class="tuition-modal-note">This guide is intended to help families estimate monthly tuition. Final enrollment and payment details are completed through Encore.</p>
       </div>
     </div>
   </section>

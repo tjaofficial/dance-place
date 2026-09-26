@@ -121,6 +121,15 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# Encore Performance Suite
+# Local development can keep the localhost default.
+# Production should set ENCORE_BASE_URL in the server .env to Encore's public HTTPS origin.
+ENCORE_BASE_URL = os.getenv(
+    "ENCORE_BASE_URL",
+    "http://127.0.0.1:8000"
+).strip().rstrip("/")
+
 # Contact form email
 CONTACT_EMAIL_ENABLED = os.getenv("CONTACT_EMAIL_ENABLED", "False").lower() == "true"
 CONTACT_EMAIL_TO = os.getenv("CONTACT_EMAIL_TO", "").strip()
