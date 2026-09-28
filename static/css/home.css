@@ -3761,3 +3761,97 @@
     }
 }
 
+
+
+/* =========================================================
+   HOME FEATURE STRIP — SIX LINKED PROGRAM OPTIONS
+========================================================= */
+.feature-strip-programs .feature-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 24px 0;
+}
+
+.feature-strip-programs .feature-item {
+    color: inherit;
+    text-decoration: none;
+    min-height: 132px;
+    padding: 24px 28px;
+    border-right: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+    transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.feature-strip-programs .feature-item:nth-child(3n) {
+    border-right: 0;
+}
+
+.feature-strip-programs .feature-item:nth-child(n+4) {
+    border-bottom: 0;
+}
+
+.feature-strip-programs .feature-item:first-child {
+    padding-left: 28px;
+}
+
+.feature-strip-programs .feature-item:last-child {
+    border-right: 0;
+}
+
+.feature-strip-programs .feature-item:focus-visible {
+    outline: 2px solid var(--purple);
+    outline-offset: -2px;
+}
+
+@media (hover:hover) and (pointer:fine) {
+    .feature-strip-programs .feature-item:hover {
+        position: relative;
+        z-index: 2;
+        background: linear-gradient(135deg, rgba(116,71,255,.055), rgba(52,120,255,.045));
+        transform: translateY(-2px);
+        box-shadow: 0 14px 30px rgba(35,43,85,.07);
+    }
+}
+
+@media (max-width: 1100px) {
+    .feature-strip-programs .feature-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .feature-strip-programs .feature-item,
+    .feature-strip-programs .feature-item:nth-child(3n) {
+        border-right: 1px solid var(--gray-200);
+        border-bottom: 1px solid var(--gray-200);
+    }
+
+    .feature-strip-programs .feature-item:nth-child(2n) {
+        border-right: 0;
+    }
+
+    .feature-strip-programs .feature-item:nth-child(n+5) {
+        border-bottom: 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .feature-strip-programs .feature-container {
+        grid-template-columns: 1fr;
+        padding: 10px 0;
+    }
+
+    .feature-strip-programs .feature-item,
+    .feature-strip-programs .feature-item:first-child,
+    .feature-strip-programs .feature-item:nth-child(2n),
+    .feature-strip-programs .feature-item:nth-child(3n),
+    .feature-strip-programs .feature-item:nth-child(n+4),
+    .feature-strip-programs .feature-item:nth-child(n+5) {
+        min-height: auto;
+        padding: 22px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--gray-200);
+    }
+
+    .feature-strip-programs .feature-item:last-child {
+        border-bottom: 0;
+    }
+}
+

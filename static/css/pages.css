@@ -4473,3 +4473,64 @@ body.registration-program-modal-open {
     }
 }
 
+
+
+/* =========================================================
+   MEET OUR TEAM — PORTRAIT CROP FIX
+   Keep the existing card/photo dimensions. These selected
+   portraits use contain so more of the original photo is visible
+   instead of being aggressively cropped by object-fit: cover.
+========================================================= */
+
+.team-photo-chelarrie .team-photo-image,
+.team-photo-alex .team-photo-image,
+.team-photo-brianna .team-photo-image,
+.team-photo-taya .team-photo-image,
+.team-photo-geana .team-photo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+    transform: none;
+    background: #f7f7f8;
+}
+
+/* Taya especially needs the lower part of the portrait visible. */
+.team-photo-taya .team-photo-image {
+    object-position: center center;
+}
+
+/* Keep the hover effect subtle without re-cropping the portrait. */
+@media (hover:hover) and (pointer:fine) {
+    .team-member:hover .team-photo-chelarrie .team-photo-image,
+    .team-member:hover .team-photo-alex .team-photo-image,
+    .team-member:hover .team-photo-brianna .team-photo-image,
+    .team-member:hover .team-photo-taya .team-photo-image,
+    .team-member:hover .team-photo-geana .team-photo-image {
+        transform: scale(1.01);
+    }
+}
+
+
+
+/* =========================================================
+   REGISTRATION — EXPANDED PROGRAM OPTIONS
+========================================================= */
+.registration-program-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.registration-program-chip:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 700px) {
+    .registration-program-options {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-program-chip:last-child:nth-child(odd) {
+        grid-column: auto;
+    }
+}
+

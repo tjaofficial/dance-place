@@ -1,4 +1,4 @@
-{% extends "website/base.html" %}
+{% extends "website/base.html" %} {% load static %}
 {% block title %}Meet Our Team | The Dance Place {% endblock %}
 {% block meta_description %}Meet the instructors, choreographers and staff who bring The Dance Place to life in Waterford, Michigan.{% endblock %}
 {% block content %}
@@ -32,7 +32,7 @@
             <details class="team-member team-member-featured">
                 <summary>
                     <div class="team-photo-wrap team-photo-chelarrie" data-team-photo data-photo-src="" aria-label="Photo coming soon for Chelarrie Goldsby">
-                        <img class="team-photo-image" alt="Chelarrie Goldsby" hidden>
+                        <img src="{% static 'images/team/Chelarrie Goldsby.jpg' %}" class="team-photo-image" alt="Chelarrie Goldsby">
                         <div class="team-photo-placeholder">
                             <div class="team-photo-initial" aria-hidden="true">CG</div>
                             <span class="team-photo-coming">Photo coming soon</span>
@@ -128,7 +128,7 @@
             <details class="team-member">
                 <summary>
                     <div class="team-photo-wrap team-photo-alex" data-team-photo data-photo-src="" aria-label="Photo coming soon for Alex Hlavaty">
-                        <img class="team-photo-image" alt="Alex Hlavaty" hidden>
+                        <img src="{% static 'images/team/Alex Hlavaty.jpeg' %}" class="team-photo-image" alt="Alex Hlavaty">
                         <div class="team-photo-placeholder">
                             <div class="team-photo-initial" aria-hidden="true">AH</div>
                             <span class="team-photo-coming">Photo coming soon</span>
@@ -151,7 +151,7 @@
             <details class="team-member">
                 <summary>
                     <div class="team-photo-wrap team-photo-brianna" data-team-photo data-photo-src="" aria-label="Photo coming soon for Brianna Purrett">
-                        <img class="team-photo-image" alt="Brianna Purrett" hidden>
+                        <img src="{% static 'images/team/Brianna Evans.jpeg' %}" class="team-photo-image" alt="Brianna Purrett">
                         <div class="team-photo-placeholder">
                             <div class="team-photo-initial" aria-hidden="true">BE</div>
                             <span class="team-photo-coming">Photo coming soon</span>
@@ -175,7 +175,7 @@
             <details class="team-member team-member-compact">
                 <summary>
                     <div class="team-photo-wrap team-photo-taya" data-team-photo data-photo-src="" aria-label="Photo coming soon for Taya">
-                        <img class="team-photo-image" alt="Taya" hidden>
+                        <img src="{% static 'images/team/Taya Malgay.png' %}" class="team-photo-image" alt="Taya">
                         <div class="team-photo-placeholder">
                             <div class="team-photo-initial" aria-hidden="true">TM</div>
                             <span class="team-photo-coming">Photo coming soon</span>
@@ -193,7 +193,7 @@
             <details class="team-member team-member-compact">
                 <summary>
                     <div class="team-photo-wrap team-photo-danielle" data-team-photo data-photo-src="" aria-label="Photo coming soon for Danielle">
-                        <img class="team-photo-image" alt="Danielle" hidden>
+                        <img src="{% static 'images/team/Danielle Sexton.png' %}" class="team-photo-image" alt="Danielle">
                         <div class="team-photo-placeholder">
                             <div class="team-photo-initial" aria-hidden="true">DS</div>
                             <span class="team-photo-coming">Photo coming soon</span>
@@ -203,15 +203,19 @@
                     <div class="team-card-heading">
                         <span class="team-role">Team</span>
                         <h3>Danielle Sexton</h3>
-                        <p>Part of The Dance Place team.</p>
+                        <p>Dance Place alumna and Eastern Michigan University dance team captain who loves helping young dancers grow.</p>
+                        <span class="team-read-more">Read Danielle's story <b>+</b></span>
                     </div>
                 </summary>
+                <div class="team-bio">
+                    <p>My name is Danielle Sexton or Ms. Dani and i’m 21 years old. I danced at the dance place for 15 years! I graduated from Waterford Mott and I now attend Eastern Michigan University, this is my senior year and I study criminal justice while also being a captain on their dance team! I’ve always loved teaching and helping little ones grow to be amazing dancers! I’m so happy to be back at a place I consider home and i’m so ready for the new season!</p>
+                </div>
             </details>
 
             <details class="team-member team-member-compact">
                 <summary>
                     <div class="team-photo-wrap team-photo-geana" data-team-photo data-photo-src="" aria-label="Photo coming soon for Geana">
-                        <img class="team-photo-image" alt="Geana" hidden>
+                        <img src="{% static 'images/team/Geana Manni.png' %}" class="team-photo-image" alt="Geana">
                         <div class="team-photo-placeholder">
                             <div class="team-photo-initial" aria-hidden="true">GM</div>
                             <span class="team-photo-coming">Photo coming soon</span>
@@ -221,15 +225,22 @@
                     <div class="team-card-heading">
                         <span class="team-role">Team</span>
                         <h3>Geana Manni</h3>
-                        <p>Part of The Dance Place team.</p>
+                        <p>Classically trained Cecchetti instructor dedicated to building strong technique, confidence, discipline and artistry.</p>
+                        <span class="team-read-more">Read Geana's story <b>+</b></span>
                     </div>
                 </summary>
+                <div class="team-bio">
+                    <p>With a passion for dance that began at age 3, Geana has dedicated much of her life to training, teaching, and inspiring dancers. She studied the Cecchetti Method of Classical Ballet and successfully completed examinations through Grade 5. She also trained in pointe, building a strong foundation in classical ballet.</p>
+                    <p>Geana began her teaching career as an Assistant Teacher, working with Ballet, Pointe, Jazz, Tap, Lyrical, and Hip-Hop classes. She later became a Dance Instructor, teaching students from beginner through advanced levels and helping dancers develop technique, confidence, discipline, and artistry.</p>
+                    <p>Her dedication to the Cecchetti Method continued as she served as a demonstrator for Cecchetti Instructor Barbra Brabant, traveling to studios to demonstrate technique and assist with instruction. She successfully completed the Cecchetti Teacher Grade 1 Examination and was a member of the Cecchetti Council of America </p>
+                    <p>Throughout her teaching career, she has developed lesson plans, prepared dancers for examinations and performances, and fostered an environment where students can grow both technically and artistically. Her goal is to share her love of dance while helping each dancer build confidence, discipline, and a lifelong appreciation for the art.</p>
+                </div>
             </details>
 
             <details class="team-member team-member-compact">
                 <summary>
                     <div class="team-photo-wrap team-photo-mia" data-team-photo data-photo-src="" aria-label="Photo coming soon for Mia">
-                        <img class="team-photo-image" alt="Mia" hidden>
+                        <img src="{% static 'images/team/Mia Stach.png' %}" class="team-photo-image" alt="Mia">
                         <div class="team-photo-placeholder">
                             <div class="team-photo-initial" aria-hidden="true">MS</div>
                             <span class="team-photo-coming">Photo coming soon</span>
@@ -239,9 +250,15 @@
                     <div class="team-card-heading">
                         <span class="team-role">Team</span>
                         <h3>Mia Stach</h3>
-                        <p>Part of The Dance Place team.</p>
+                        <p>Dance Place alumna, competition dancer and choreographer with extensive ballet training and teaching experience.</p>
+                        <span class="team-read-more">Read Mia's story <b>+</b></span>
                     </div>
                 </summary>
+                <div class="team-bio">
+                    <p>Mia Stach began dancing at The Dance Place at just three years old and continued through graduation, competing as a member of The Dance Place Competition Team for several years. She has studied a wide variety of dance styles, including more than 15 years of ballet training.</p>
+                    <p>Mia also completed The Dance Place Apprenticeship Program, where she developed valuable experience in teaching, lesson planning, and choreography. Her choreographic accomplishments include her award-winning senior solo, which earned a Top Overall placement, as well as lyrical and contemporary routines created for The Dance Place Competition Team.</p>
+                    <p>Mia is currently pursuing an education in dentistry. In her free time, she enjoys teaching, continuing her dance training, and giving back to the studio she has proudly called home for many years.</p>
+                </div>
             </details>
 
             <article class="team-member team-member-compact team-desk-divas">
@@ -252,7 +269,7 @@
 
                     <div class="team-desk-divas-list" aria-label="Desk Divas">
                         <span>Devon Taylor</span>
-                        <span>NEED_NAME</span>
+                        <span>Raven Tookes</span>
                     </div>
                 </div>
             </article>
